@@ -66,6 +66,7 @@ var MemberComponent = (function () {
             moduleId: module.id,
             selector: 'member',
             templateUrl: './member.component.html',
+            styleUrls: ['./member.component.css']
         }), 
         __metadata('design:paramtypes', [router_1.ActivatedRoute])
     ], MemberComponent);

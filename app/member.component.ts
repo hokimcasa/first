@@ -36,6 +36,7 @@ const TEMP:Number[] = new Array(Math.ceil(MEMBERS.length/10)).fill(0);
   moduleId: module.id,
   selector: 'member',
   templateUrl: './member.component.html',
+  styleUrls:['./member.component.css']
 })
 
 export class MemberComponent {
