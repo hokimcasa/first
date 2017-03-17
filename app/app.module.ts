@@ -9,6 +9,7 @@ import { MyFunctionComponent }  from './myfunction.component ';
 import { MyContentComponent }  from './mycontent.component';
 import { MemberComponent }   from './member.component';
 import { TransactionComponent }   from './transaction.component';
+import { TransactionHeadComponent }   from './transaction-head.component';
 
 import { AppRoutingModule }     from './app-routing.module';
 @NgModule({
@@ -24,7 +25,8 @@ import { AppRoutingModule }     from './app-routing.module';
     MyFunctionComponent,
     MyContentComponent,
     MemberComponent,
-    TransactionComponent
+    TransactionComponent,
+    TransactionHeadComponent
   ],
   bootstrap: [ AppComponent ]
 })
