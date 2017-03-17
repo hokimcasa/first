@@ -18,6 +18,7 @@ var myfunction_component_1 = require('./myfunction.component ');
 var mycontent_component_1 = require('./mycontent.component');
 var member_component_1 = require('./member.component');
 var transaction_component_1 = require('./transaction.component');
+var transaction_head_component_1 = require('./transaction-head.component');
 var app_routing_module_1 = require('./app-routing.module');
 var AppModule = (function () {
     function AppModule() {
@@ -36,7 +37,8 @@ var AppModule = (function () {
                 myfunction_component_1.MyFunctionComponent,
                 mycontent_component_1.MyContentComponent,
                 member_component_1.MemberComponent,
-                transaction_component_1.TransactionComponent
+                transaction_component_1.TransactionComponent,
+                transaction_head_component_1.TransactionHeadComponent
             ],
             bootstrap: [app_component_1.AppComponent]
         }), 
