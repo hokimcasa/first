@@ -1,6 +1,7 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }   from '@angular/forms';
+import { HttpModule}     from '@angular/http'; 
 
 import { AppComponent }  from './app.component';
 import { MyHeadComponent }  from './myhead.component';
@@ -12,11 +13,19 @@ import { TransactionComponent }   from './transaction.component';
 import { TransactionHeadComponent }   from './transaction-head.component';
 
 import { AppRoutingModule }     from './app-routing.module';
+
+import {InMemoryWebApiModule} from 'angular-in-memory-web-api'
+import {InMemoryMemberDataService} from './InMemoryMemberDataService'
+
 @NgModule({
   imports: [
+    HttpModule,
+    InMemoryWebApiModule.forRoot(InMemoryMemberDataService),
     BrowserModule,
     FormsModule,
     AppRoutingModule
+   
+    
   ],
   declarations: [
     AppComponent,

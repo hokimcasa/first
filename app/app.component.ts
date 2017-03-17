@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+import { MemberService } from './member.service';
 export class Hero {
   id: number;
   name: string;
@@ -10,7 +11,8 @@ export class Hero {
   template: `
     <myhead></myhead>
     <mybady></mybady>
-    `
+    `,
+   providers:[MemberService] 
 })
 export class AppComponent {
   title = 'Tour of Heroes';

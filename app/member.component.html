@@ -26,12 +26,13 @@
             </thead>
             <tbody>
                 <tr *ngFor="let member of memberssub">
-                  <td>{{member.id}}</td>
+                  <td>{{member.id+9}}</td>
                   <td>{{member.name}}</td>
                   <td>
-                    {{member.installdate.getFullYear()}}/
+                      {{member.installdate.substring(0,10)}}
+                    <!--{{member.installdate.getFullYear()}}/
                     {{member.installdate.getMonth()+1}}/
-                    {{member.installdate.getDate()}}
+                    {{member.installdate.getDate()}}-->
                   </td>
                   <td>{{member.status}}</td>
                   <td>
