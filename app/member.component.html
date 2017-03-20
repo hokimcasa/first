@@ -22,17 +22,18 @@
                     <th>等級</th>
                     <th>狀態</th>
                     <th>操作</th>
+                    <th>備註</th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let member of memberssub">
-                  <td>{{member.id+9}}</td>
+                  <td>{{member.id}}</td>
                   <td>{{member.name}}</td>
                   <td>
                       {{member.installdate.substring(0,10)}}
-                    <!--{{member.installdate.getFullYear()}}/
-                    {{member.installdate.getMonth()+1}}/
-                    {{member.installdate.getDate()}}-->
+                  </td>
+                  <td>
+                      {{member.level}}
                   </td>
                   <td>{{member.status}}</td>
                   <td>
@@ -40,6 +41,7 @@
                     <button class="btn btn-outline-info btn-sm" type="button">修改</button>
                     <button class="btn btn-outline-danger btn-sm" type="button">停權</button>
                   </td> 
+                  <td>{{member.remark}}</td>
                 </tr>
                 
             </tbody>

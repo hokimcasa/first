@@ -11,11 +11,14 @@ import { MyContentComponent }  from './mycontent.component';
 import { MemberComponent }   from './member.component';
 import { TransactionComponent }   from './transaction.component';
 import { TransactionHeadComponent }   from './transaction-head.component';
+import { TransactionBadyComponent }   from './transaction-bady.component';
+
 
 import { AppRoutingModule }     from './app-routing.module';
 
 import {InMemoryWebApiModule} from 'angular-in-memory-web-api'
 import {InMemoryMemberDataService} from './InMemoryMemberDataService'
+
 
 @NgModule({
   imports: [
@@ -35,7 +38,8 @@ import {InMemoryMemberDataService} from './InMemoryMemberDataService'
     MyContentComponent,
     MemberComponent,
     TransactionComponent,
-    TransactionHeadComponent
+    TransactionHeadComponent,
+    TransactionBadyComponent
   ],
   bootstrap: [ AppComponent ]
 })
