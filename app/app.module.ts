@@ -9,9 +9,11 @@ import { MyBadyComponent }  from './mybady.component';
 import { MyFunctionComponent }  from './myfunction.component ';
 import { MyContentComponent }  from './mycontent.component';
 import { MemberComponent }   from './member.component';
+import { MemberInsertComponent }   from './member-insert.component';
 import { TransactionComponent }   from './transaction.component';
 import { TransactionHeadComponent }   from './transaction-head.component';
 import { TransactionBadyComponent }   from './transaction-bady.component';
+import { GoogleChatComponent}         from './googlechart.component';
 
 
 import { AppRoutingModule }     from './app-routing.module';
@@ -26,10 +28,7 @@ import {InMemoryMemberDataService} from './InMemoryMemberDataService'
     InMemoryWebApiModule.forRoot(InMemoryMemberDataService),
     BrowserModule,
     FormsModule,
-    AppRoutingModule
-   
-    
-  ],
+    AppRoutingModule],
   declarations: [
     AppComponent,
     MyHeadComponent,
@@ -37,9 +36,11 @@ import {InMemoryMemberDataService} from './InMemoryMemberDataService'
     MyFunctionComponent,
     MyContentComponent,
     MemberComponent,
+    MemberInsertComponent,
     TransactionComponent,
     TransactionHeadComponent,
-    TransactionBadyComponent
+    TransactionBadyComponent,
+    GoogleChatComponent
   ],
   bootstrap: [ AppComponent ]
 })

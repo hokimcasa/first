@@ -9,5 +9,4 @@ export class TransactionService {
   getTransactionDatas(): Promise<TransactionData[]> {
     return Promise.resolve(TRANSACTIONDATAS);
   }
-
 }

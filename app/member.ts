@@ -7,4 +7,7 @@ export class Member {
   status:Status;
   level:Level;
   remark:string;
+  accountNumber:string;
+  password:string;
+  parent:number;
 }
