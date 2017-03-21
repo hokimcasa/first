@@ -4,7 +4,8 @@ import { ActivatedRoute, Params,Router } from '@angular/router';
 import { Location }               from '@angular/common';
 import { Member }               from './member';
 import { MemberService } from './member.service';
-
+import { Channel }                 from './channel';
+import { ChannelService}           from './channel.service';
 @Component({
   moduleId: module.id,
   selector: 'member',
@@ -16,14 +17,14 @@ export class MemberComponent implements OnInit{
   temp:Number[];
   memberssub:Member[];
   memid:number = 0;
-  memidroute:number = 0;
   tempDate:Date;
-
+  channels:Channel[];
   selectid:string;
   constructor(
     private route: ActivatedRoute,
     private memberService:MemberService,
-    private router: Router
+    private router: Router,
+    private channelService: ChannelService
     ) { }
 
     getMembersInit():void{
@@ -31,7 +32,22 @@ export class MemberComponent implements OnInit{
       this.memberService.getMembers().then(members=>{
         this.memberssub = members.slice(0,10);
         this.temp = new Array(Math.ceil(members.length/10)).fill(0);
+
       });
+      this.channelService.getChanneles().then(channels=>{
+        this.channels = channels;
+          for(let i=0;i<this.memberssub.length;i++){
+          for(let j=0;j<this.channels.length;j++){
+              console.log();
+              if(this.memberssub[i].channelId===this.channels[j].id){
+                  
+                  this.memberssub[i].channelId=this.channels[j].channelname;
+              }
+          }
+        }
+      });
+
+      
       console.log("InitEnd");
     }
 
@@ -39,7 +55,18 @@ export class MemberComponent implements OnInit{
       this.memberService.getMembers().then(members=>{
         this.memberssub = members.slice(0+index*10,10+index*10);
         this.temp = new Array(Math.ceil(members.length/10)).fill(0);
-        console.log("memidroute="+this.memidroute);
+      });
+      this.channelService.getChanneles().then(channels=>{
+        this.channels = channels;
+          for(let i=0;i<this.memberssub.length;i++){
+          for(let j=0;j<this.channels.length;j++){
+              console.log();
+              if(this.memberssub[i].channelId===this.channels[j].id){
+                  
+                  this.memberssub[i].channelId=this.channels[j].channelname;
+              }
+          }
+        }
       });
     }
 
@@ -49,11 +76,7 @@ export class MemberComponent implements OnInit{
     onSelect(memid: number): void {
     
       this.memid = memid;
-
-      this.route.params
-        .subscribe((params: Params) => this.memidroute = params['index']);
-
-      this.getMembers(this.memidroute-1);
+      this.getMembers(memid-1);
       
       
     }

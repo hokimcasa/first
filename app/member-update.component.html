@@ -1,0 +1,41 @@
+<form *ngIf="member">
+     <div class="form-group">
+     帳號 {{member.accountNo}}
+    </div>
+
+     <div class="form-group">
+      <label for="name1">姓名</label>
+      <input [(ngModel)]="member.name" [ngModelOptions]="{standalone: true}" type="text" class="form-control" value="{{member.name}}">
+    </div>
+
+    <div class="form-group">
+      <label for="phonenumber1">手機</label>
+      <input [(ngModel)]="member.mobileNO" [ngModelOptions]="{standalone: true}" type="tel" class="form-control" id="phonenumber1" value="{{member.mobileNO}}">
+    </div>
+
+    <div class="form-group">
+      <label for="email1">Email</label>
+      <input [(ngModel)]="member.email" [ngModelOptions]="{standalone: true}" type="email" class="form-control" id="email1" value="{{member.email}}">
+    </div>
+
+    <div class="form-group">
+      <label for="email1">網站</label>
+      <input [(ngModel)]="member.webSite" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="email1" value="{{member.webSite}}">
+    </div>
+
+    <div class="form-group">
+      <label for="email1">地址</label>
+      <input [(ngModel)]="member.address" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="email1" value="{{member.address}}">
+    </div>
+
+
+    <div class="row">
+      <div class="col-3">
+        <button type="submit" class="btn btn-primary" (click)="update()">修改</button>
+      </div>
+      <div class="col-3">
+        <button class="btn btn-secondary" (click)="goBack()">Back</button>
+      </div>
+    </div>
+  
+</form>
