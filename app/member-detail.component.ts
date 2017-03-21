@@ -1,6 +1,6 @@
 import 'rxjs/add/operator/switchMap';
-import { Component, OnInit,OnChanges }      from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { Component, OnInit }      from '@angular/core';
+import { ActivatedRoute, Params,Router } from '@angular/router';
 import { Member }                 from './member';
 import { MemberService}           from './member.service';
 import { Location}                from '@angular/common';
@@ -21,7 +21,8 @@ export class MemberDetailComponent implements OnInit{
     private memberService: MemberService,
     private route: ActivatedRoute,
     private location: Location,
-    private channelService: ChannelService
+    private channelService: ChannelService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -38,5 +39,10 @@ export class MemberDetailComponent implements OnInit{
 
   goBack():void{
     this.location.back();
+  }
+
+  goUpdate(memberid:string): void {
+    
+      this.router.navigate(['/memberupdate',memberid]);
   }
 }

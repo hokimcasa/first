@@ -17,6 +17,7 @@ import { TransactionBadyComponent }   from './transaction-bady.component';
 import { GoogleChatComponent}         from './googlechart.component';
 import { MemberService}           from './member.service';
 import { ChannelService}           from './channel.service';
+import { MemberUpdateComponent }    from './member-update.component';
 
 import { AppRoutingModule }     from './app-routing.module';
 
@@ -42,7 +43,8 @@ import {InMemoryMemberDataService} from './InMemoryMemberDataService'
     TransactionHeadComponent,
     TransactionBadyComponent,
     GoogleChatComponent,
-    MemberDetailComponent
+    MemberDetailComponent,
+    MemberUpdateComponent
   ],
   bootstrap: [ AppComponent ],
   providers: [ MemberService ,

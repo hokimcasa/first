@@ -4,10 +4,7 @@
         <div aria-label="Toolbar with button groups" class="btn-toolbar pull-right" role="toolbar">
             
             <div aria-label="Second group" class="btn-group" role="group">
-                <form class="form-inline mt-2 mt-md-0">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>
+                
                 <button class="btn btn-primary btn-sm" type="button"  routerLink="/memberinsert" routerLinkActive="active" ><i class="icon-user"></i>新增會員</button>
             </div>
         </div>
@@ -20,7 +17,6 @@
                     <th>名字</th>
                     <th>註冊日</th>
                     <th>通路</th>
-                    <th>狀態</th>
                     <th>操作</th>
                     <th>備註</th>
                 </tr>
@@ -35,11 +31,9 @@
                   <td>
                       {{member.channelId}}
                   </td>
-                  <td>{{member.status}}</td>
                   <td>
                     <button class="btn btn-outline-success btn-sm" type="button"  (click)="gotoDetail(member.id)" >資訊</button>
                     <button class="btn btn-outline-info btn-sm" type="button">修改</button>
-                    <button class="btn btn-outline-danger btn-sm" type="button">停權</button>
                   </td> 
                   <td>{{member.remark}}</td>
                 </tr>

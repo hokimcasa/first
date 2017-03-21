@@ -29,6 +29,15 @@
       <th scope="row">網站</th>
       <td>{{member.webSite}}</td>
     </tr>
+    <tr>
+      <th scope="row">地址</th>
+      <td>{{member.address}}</td>
+    </tr>
+    <tr>
+      <th scope="row">帳號</th>
+      <td>{{member.accountNo}}</td>
+    </tr>
   </tbody>
 </table>
+ <button class="btn btn-info" (click)="goUpdate(member.id)">修改</button>
  <button class="btn btn-secondary" (click)="goBack()">Back</button>
