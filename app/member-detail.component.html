@@ -18,7 +18,8 @@
  
     <tr>
       <th scope="row" >手續費</th>
-      <td *ngIf="member.fee!==undefined">{{member.fee}}</td>
+      <td *ngIf="member.fee">{{member.fee}}%</td>
+      <td *ngIf="channel&&!member.fee">{{channel.fee}}%</td>
       <th>手機</th>
       <td>{{member.mobileNO}}</td>
     </tr>

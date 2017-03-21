@@ -28,12 +28,15 @@
       <input [(ngModel)]="member.address" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="email1" value="{{member.address}}">
     </div>
 
-
+    <div class="form-group">
+      <label for="email1">手續費</label>
+      <input [(ngModel)]="member.fee" [ngModelOptions]="{standalone: true}" type="number" class="form-control" id="email1" value="{{member.fee}}">
+    </div>
     <div class="row">
-      <div class="col-3">
+      <div class="col-1">
         <button type="submit" class="btn btn-primary" (click)="update()">修改</button>
       </div>
-      <div class="col-3">
+      <div class="col-1">
         <button class="btn btn-secondary" (click)="goBack()">Back</button>
       </div>
     </div>
