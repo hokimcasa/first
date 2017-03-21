@@ -1,0 +1,30 @@
+<table class="table table-sm" *ngIf="member">
+  <thead>
+    <tr>
+      <th>會員個人資料</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">姓名</th>
+      <td>{{member.name}}</td>
+    </tr>
+    <tr>
+      <th scope="row">通道</th>
+      <td>{{member.channelId}}</td>
+    </tr>
+    <tr>
+      <th scope="row">手機</th>
+      <td>{{member.mobileNO}}</td>
+    </tr>
+    <tr>
+      <th scope="row">Email</th>
+      <td>{{member.email}}</td>
+    </tr>
+    <tr>
+      <th scope="row">網站</th>
+      <td>{{member.webSite}}</td>
+    </tr>
+  </tbody>
+</table>
+ <button class="btn btn-secondary" (click)="goBack()">Back</button>

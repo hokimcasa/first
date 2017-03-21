@@ -18,9 +18,12 @@ export class MemberComponent implements OnInit{
   memid:number = 0;
   memidroute:number = 0;
   tempDate:Date;
+
+  selectid:string;
   constructor(
     private route: ActivatedRoute,
-    private memberService:MemberService
+    private memberService:MemberService,
+    private router: Router
     ) { }
 
     getMembersInit():void{
@@ -54,13 +57,9 @@ export class MemberComponent implements OnInit{
       
       
     }
-    getFullYear(member:Member):number{
 
-      return member.installdate.getFullYear();
+    gotoDetail(memberid:string): void {
+      this.selectid = memberid;
+      this.router.navigate(['/memberdetail', this.selectid]);
     }
-
-    getDate(member:string):void{
-
-      this.tempDate= new Date(member);
-    }
-}
+  }

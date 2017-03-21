@@ -10,11 +10,13 @@ import { MyFunctionComponent }  from './myfunction.component ';
 import { MyContentComponent }  from './mycontent.component';
 import { MemberComponent }   from './member.component';
 import { MemberInsertComponent }   from './member-insert.component';
+import { MemberDetailComponent }   from './member-detail.component';
 import { TransactionComponent }   from './transaction.component';
 import { TransactionHeadComponent }   from './transaction-head.component';
 import { TransactionBadyComponent }   from './transaction-bady.component';
 import { GoogleChatComponent}         from './googlechart.component';
-
+import { MemberService}           from './member.service';
+import { ChannelService}           from './channel.service';
 
 import { AppRoutingModule }     from './app-routing.module';
 
@@ -40,8 +42,11 @@ import {InMemoryMemberDataService} from './InMemoryMemberDataService'
     TransactionComponent,
     TransactionHeadComponent,
     TransactionBadyComponent,
-    GoogleChatComponent
+    GoogleChatComponent,
+    MemberDetailComponent
   ],
-  bootstrap: [ AppComponent ]
+  bootstrap: [ AppComponent ],
+  providers: [ MemberService ,
+               ChannelService ]
 })
 export class AppModule { }

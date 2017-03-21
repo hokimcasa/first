@@ -3,54 +3,54 @@ import { Headers, Http } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
-import { Member }    from './member';
+import { Channel } from './channel';
 
 @Injectable()
-export class MemberService {
+export class ChannelService {
 
   private headers = new Headers({'Content-Type': 'application/json'});
-  private MemberesUrl = 'api/members';  // URL to web api
+  private channelsURL = 'api/channels';  // URL to web api
 
   constructor(private http: Http) { }
 
-  getMembers(): Promise<Member[]> {
-    return this.http.get(this.MemberesUrl)
+  getChanneles(): Promise<Channel[]> {
+    return this.http.get(this.channelsURL)
                .toPromise()
-               .then(response => response.json().data as Member[])
+               .then(response => response.json().data as Channel[])
                .catch(this.handleError);
   }
 
 
-  getMember(id: string): Promise<Member> {
-    const url = `${this.MemberesUrl}/${id}`;
+  getChannel(Channel: string): Promise<Channel> {
+    const url = `${this.channelsURL}/${Channel}`;
     return this.http.get(url)
       .toPromise()
-      .then(response => response.json().data as Member)
+      .then(response => response.json().data as Channel)
       .catch(this.handleError);
   }
 
-  delete(id: string): Promise<void> {
-    const url = `${this.MemberesUrl}/${id}`;
+  delete(Channel: string): Promise<void> {
+    const url = `${this.channelsURL}/${Channel}`;
     return this.http.delete(url, {headers: this.headers})
       .toPromise()
       .then(() => null)
       .catch(this.handleError);
   }
 
-  create(name: string): Promise<Member> {
+  create(name: string): Promise<Channel> {
     return this.http
-      .post(this.MemberesUrl, JSON.stringify({name: name}), {headers: this.headers})
+      .post(this.channelsURL, JSON.stringify({name: name}), {headers: this.headers})
       .toPromise()
       .then(res => res.json().data)
       .catch(this.handleError);
   }
 
-  update(Member: Member): Promise<Member> {
-    const url = `${this.MemberesUrl}/${Member.id}`;
+  update(Channel: Channel): Promise<Channel> {
+    const url = `${this.channelsURL}/${Channel.channelId}`;
     return this.http
-      .put(url, JSON.stringify(Member), {headers: this.headers})
+      .put(url, JSON.stringify(Channel), {headers: this.headers})
       .toPromise()
-      .then(() => Member)
+      .then(() => Channel)
       .catch(this.handleError);
   }
 
@@ -59,4 +59,3 @@ export class MemberService {
     return Promise.reject(error.message || error);
   }
 }
-

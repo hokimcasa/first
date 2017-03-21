@@ -1,13 +1,15 @@
-type Status = '未驗證'|'已驗證'|'停權';
-type Level = '黃金'|'白金'|'普通';
 export class Member {
-  id: number;
+  id: string;
   name: string;
-  installdate:Date;
-  status:Status;
-  level:Level;
-  remark:string;
-  accountNumber:string;
-  password:string;
-  parent:number;
+  channelId:string;
+  fee:string;
+  mobileNO:string;
+  accountNo:string;
+  email:string;
+  address:string;
+  webSite:string;
+  createDate:Date;
+  createUser:string;
+  lastUpdate:string;
+  updateUser:string;
 }

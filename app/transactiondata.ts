@@ -6,6 +6,6 @@ export class TransactionData {
   money: number;
   balance: number;
   membername:string;
-  memberlv:string;
+  memberchannel:string;
   remark:string;
 }
