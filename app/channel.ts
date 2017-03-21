@@ -1,5 +1,5 @@
 export class Channel {
-  channelId:string;
+  id:string;
   channelname: string;
   fee:string;
   description:string;

@@ -23,7 +23,6 @@ import { AppRoutingModule }     from './app-routing.module';
 import {InMemoryWebApiModule} from 'angular-in-memory-web-api'
 import {InMemoryMemberDataService} from './InMemoryMemberDataService'
 
-
 @NgModule({
   imports: [
     HttpModule,

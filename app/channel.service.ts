@@ -21,8 +21,10 @@ export class ChannelService {
   }
 
 
-  getChannel(Channel: string): Promise<Channel> {
-    const url = `${this.channelsURL}/${Channel}`;
+  getChannel(id: string): Promise<Channel> {
+    const url = `${this.channelsURL}/${id}`;
+    console.log("url = "+url);
+    console.log("id = "+id);
     return this.http.get(url)
       .toPromise()
       .then(response => response.json().data as Channel)
@@ -46,7 +48,7 @@ export class ChannelService {
   }
 
   update(Channel: Channel): Promise<Channel> {
-    const url = `${this.channelsURL}/${Channel.channelId}`;
+    const url = `${this.channelsURL}/${Channel.id}`;
     return this.http
       .put(url, JSON.stringify(Channel), {headers: this.headers})
       .toPromise()

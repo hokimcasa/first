@@ -28,6 +28,16 @@ export class InMemoryMemberDataService implements InMemoryDbService{
        {id:'12341234',name:'金剛大籠包',channelId:'C00001',mobileNO:0928765581,accountNo:'',email:'test12@sample.com',address:'',
        webSite:'http://sample12.com.tw',createDate:new Date('2010-10-29'),createUser:'',lastUpdate:'',updateUser:''},
     ];
-    return {members};
+
+    let channels = [
+      {id:'C00001',channelname: '通化街夜市',fee:15+'%',description:'實體通路',createDate:'',createUser:''},
+      {id:'C00002',channelname: '奇怪網路商城',fee:3+'%',description:'網路通路',createDate:'',createUser:''},
+      {id:'C00003',channelname: '某山頭小農',fee:15+'%',description:'實體通路',createDate:'',createUser:''},
+      {id:'C00004',channelname: '奇幻網路遊戲',fee:5+'%',description:'實體+網路通路',createDate:'',createUser:''},
+    ];
+
+    return {members,channels};
   }
+
+ 
 } 

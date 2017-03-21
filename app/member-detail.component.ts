@@ -1,5 +1,5 @@
 import 'rxjs/add/operator/switchMap';
-import { Component, OnInit }      from '@angular/core';
+import { Component, OnInit,OnChanges }      from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Member }                 from './member';
 import { MemberService}           from './member.service';
@@ -28,11 +28,11 @@ export class MemberDetailComponent implements OnInit{
     this.route.params
       .switchMap((params: Params) => this.memberService.getMember(params['id']))
       .subscribe(member => {this.member = member;
-      //  console.log(member===undefined);
-      //  console.log(member)
-    });
-    
-    
+                            this.channelService.getChannel(this.member.channelId)
+                            .then(channel=>{
+                            this.channel = channel;
+                            });
+                          });
   }
 
 

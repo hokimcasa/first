@@ -10,8 +10,12 @@
       <td>{{member.name}}</td>
     </tr>
     <tr>
-      <th scope="row">通道</th>
-      <td>{{member.channelId}}</td>
+      <th scope="row" >通道</th>
+      <td *ngIf="channel">{{channel.channelname}}</td>
+    </tr>
+    <tr>
+      <th scope="row" >手續費</th>
+      <td *ngIf="channel">{{channel.fee}}</td>
     </tr>
     <tr>
       <th scope="row">手機</th>
