@@ -1,11 +1,11 @@
 type Status = '儲值'|'花費';
 
 export class TransactionData {
+  id:string;
   date:Date;  
   status:Status;
   money: number;
   balance: number;
-  membername:string;
-  memberchannel:string;
+  memberid:string;
   remark:string;
 }

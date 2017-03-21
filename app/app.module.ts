@@ -22,12 +22,12 @@ import { MemberUpdateComponent }    from './member-update.component';
 import { AppRoutingModule }     from './app-routing.module';
 
 import {InMemoryWebApiModule} from 'angular-in-memory-web-api'
-import {InMemoryMemberDataService} from './InMemoryMemberDataService'
+import {InMemoryDataService} from './InMemoryDataService'
 
 @NgModule({
   imports: [
     HttpModule,
-    InMemoryWebApiModule.forRoot(InMemoryMemberDataService),
+    InMemoryWebApiModule.forRoot(InMemoryDataService),
     BrowserModule,
     FormsModule,
     AppRoutingModule],

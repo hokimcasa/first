@@ -9,7 +9,8 @@ import { ChannelService}           from './channel.service';
 @Component({
   moduleId: module.id,
   selector: 'memberdetail',
-  templateUrl: './member-detail.component.html'
+  templateUrl: './member-detail.component.html',
+  styleUrls:['./member-detail.component.css']
 })
 
 
@@ -29,6 +30,7 @@ export class MemberDetailComponent implements OnInit{
     this.route.params
       .switchMap((params: Params) => this.memberService.getMember(params['id']))
       .subscribe(member => {this.member = member;
+                            console.log(member.mobileNO);
                             this.channelService.getChannel(this.member.channelId)
                             .then(channel=>{
                             this.channel = channel;

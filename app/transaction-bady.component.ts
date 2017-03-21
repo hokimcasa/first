@@ -16,7 +16,10 @@ export class TransactionBadyComponent implements OnInit{
     constructor(private transactionService:TransactionService){}
 
     getTransactionDatas():void{
-        this.transactionService.getTransactionDatas().then(transactionDatas=>this.transactionDatas=transactionDatas);
+        this.transactionService.getTransactions().then(transactionDatas=>{
+            this.transactionDatas=transactionDatas;
+            
+        });
         
     }
 

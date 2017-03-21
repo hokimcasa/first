@@ -2,7 +2,7 @@ export class Member {
   id: string;
   name: string;
   channelId:string;
-  fee:string;
+  fee:number;
   mobileNO:string;
   accountNo:string;
   email:string;
@@ -10,6 +10,6 @@ export class Member {
   webSite:string;
   createDate:Date;
   createUser:string;
-  lastUpdate:string;
+  lastUpdate:Date;
   updateUser:string;
 }

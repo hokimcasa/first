@@ -6,36 +6,47 @@
   </thead>
   <tbody>
     <tr>
+      <th scope="row">ID</th>
+      <td colspan="3">{{member.id}}</td>
+    </tr>
+    <tr>
       <th scope="row">姓名</th>
       <td>{{member.name}}</td>
-    </tr>
-    <tr>
-      <th scope="row" >通道</th>
+      <th>通道</th>
       <td *ngIf="channel">{{channel.channelname}}</td>
     </tr>
+ 
     <tr>
       <th scope="row" >手續費</th>
-      <td *ngIf="channel">{{channel.fee}}</td>
-    </tr>
-    <tr>
-      <th scope="row">手機</th>
+      <td *ngIf="member.fee!==undefined">{{member.fee}}</td>
+      <th>手機</th>
       <td>{{member.mobileNO}}</td>
     </tr>
+  
     <tr>
       <th scope="row">Email</th>
       <td>{{member.email}}</td>
-    </tr>
-    <tr>
-      <th scope="row">網站</th>
+      <th>網站</th>
       <td>{{member.webSite}}</td>
     </tr>
+   
     <tr>
       <th scope="row">地址</th>
       <td>{{member.address}}</td>
+      <th>帳號</th>
+      <td>{{member.accountNo}}</td>
     </tr>
     <tr>
-      <th scope="row">帳號</th>
-      <td>{{member.accountNo}}</td>
+      <th>建立時間</th>
+      <td>{{member.createDate.substring(0,10)}}</td>
+      <th scope="row">建立者</th>
+      <td>{{member.createUser}}</td>      
+    </tr>
+    <tr>
+      <th scope="row">最後修改時間</th>
+      <td>{{member.lastUpdate}}</td>
+      <th>修改者</th>
+      <td>{{member.updateUser}}</td>
     </tr>
   </tbody>
 </table>
