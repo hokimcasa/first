@@ -71,20 +71,12 @@ export class ChannelComponent implements OnInit{
     }
 
     getChannel():void{
-      console.log("InitStart");
       this.channelService.getChanneles().then(
           channels=>this.channels=channels);
     }
-    // onSelect(memid: number): void {
-    
-    //   this.memid = memid;
-    //   this.getMembers(memid-1);
-      
-      
-    // }
 
-    // gotoDetail(memberid:string): void {
-    //   this.selectid = memberid;
-    //   this.router.navigate(['/memberdetail', this.selectid]);
-    // }
+    gotoDetail(channelid:string): void {
+      this.selectid = channelid;
+      this.router.navigate(['/channeldetail', this.selectid]);
+    }
   }

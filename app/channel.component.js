@@ -60,8 +60,11 @@ var ChannelComponent = (function () {
     };
     ChannelComponent.prototype.getChannel = function () {
         var _this = this;
-        console.log("InitStart");
         this.channelService.getChanneles().then(function (channels) { return _this.channels = channels; });
+    };
+    ChannelComponent.prototype.gotoDetail = function (channelid) {
+        this.selectid = channelid;
+        this.router.navigate(['/channeldetail', this.selectid]);
     };
     ChannelComponent = __decorate([
         core_1.Component({

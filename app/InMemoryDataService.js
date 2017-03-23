@@ -5,9 +5,9 @@ var InMemoryDataService = (function () {
     InMemoryDataService.prototype.createDb = function () {
         var members = [
             { id: 'A123456789', name: '張三蚵仔煎', channelId: 'C00001', fee: '99', mobileNO: '0987654321', accountNo: 'F789745', email: 'test1@sample.com', address: '106臺北市大安區新生南路2段86號',
-                webSite: 'http://sample1.com.tw', createDate: new Date('2010-10-29'), createUser: '', lastUpdate: '', updateUser: '' },
+                webSite: 'http://sample1.com.tw', createDate: new Date('2010-10-29T12:00:00Z'), createUser: '', lastUpdate: '', updateUser: '' },
             { id: 'B234567898', name: '李四高麗菜', channelId: 'C00003', fee: '', mobileNO: '0912345678', accountNo: '', email: 'test2@sample.com', address: '台北市松山區八德路四段692號7-11樓',
-                webSite: 'http://sample2.com.tw', createDate: new Date('2010-10-29'), createUser: '', lastUpdate: '', updateUser: '' },
+                webSite: 'http://sample2.com.tw', createDate: new Date('2010-10-29T11:00:00Z'), createUser: '', lastUpdate: '', updateUser: '' },
             { id: '88888888', name: '路人排骨', channelId: 'C00001', fee: '', mobileNO: '0933456746', accountNo: '', email: 'test3@sample.com', address: '臺北市大安區新生南路2段86號',
                 webSite: 'http://sample3.com.tw', createDate: new Date('2010-10-29'), createUser: '', lastUpdate: '', updateUser: '' },
             { id: '77777777', name: '新奇玩具', channelId: 'C00002', fee: '', mobileNO: '0928765573', accountNo: '', email: 'test4@sample.com', address: '臺北市文山區木柵路三段220號',
