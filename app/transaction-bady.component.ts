@@ -1,4 +1,6 @@
 import { Component, Input,OnInit } from '@angular/core';
+import { ActivatedRoute, Params,Router } from '@angular/router';
+
 import { TransactionData } from './transactiondata';
 import { TransactionService }from './transaction.service';
 import { Member } from './member';
@@ -17,7 +19,8 @@ export class TransactionBadyComponent implements OnInit{
    
     constructor(private transactionService:TransactionService,
                 private memberService:MemberService,
-                private channelService:ChannelService
+                private channelService:ChannelService,
+                private router: Router
                 ){}
 
     getTransactionDatas():void{
@@ -41,4 +44,7 @@ export class TransactionBadyComponent implements OnInit{
         this.getTransactionDatas();
     }
 
+    gotoDetail(transactionid:string): void {
+      this.router.navigate(['/transactiondetail',transactionid]);
+    }
 }

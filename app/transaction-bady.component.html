@@ -23,7 +23,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let transactionData of transactionDatas;let i = index">
+                <tr *ngFor="let transactionData of transactionDatas;let i = index" (click)="gotoDetail(transactionData.id)">
                 <td>
                     {{transactionData.date.substring(0,10)}}
                 </td>

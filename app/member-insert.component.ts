@@ -5,13 +5,14 @@ import { MemberService}     from'./member.service';
 @Component({
   moduleId: module.id,
   selector: 'memberinsert',
-  templateUrl: './member-insert.component.html'
+  templateUrl: './member-insert.component.html',
+  styleUrls:['./member-insert.component.css']
 })
 
 
 
 export class MemberInsertComponent{
-  member:Member;
+  member:Member=new Member();
   constructor(
     private location:Location,
     private memberService:MemberService

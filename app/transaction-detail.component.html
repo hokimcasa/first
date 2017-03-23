@@ -1,0 +1,27 @@
+<table class="table table-sm" *ngIf="transaction">
+  <thead>
+    <tr>
+      <th>交易資料</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">ID</th>
+      <td colspan="3">{{transaction.id}}</td>
+    </tr>
+    <tr>
+      <th scope="row" >交易時間</th>
+      <td>{{transaction.date.substring(0,10)}} {{transaction.date.substring(11,19)}}</td> 
+      <th scope="row">金額</th>
+      <td colspan="3">{{transaction.money}}</td>
+    </tr>
+    <tr>
+      <th>會員</th>
+      <td>{{transaction.memberid}}</td>
+      <th>通路</th>
+      <td >{{transaction.channelid}}</td>
+    </tr>
+ 
+  </tbody>
+</table>
+ <button class="btn btn-secondary" (click)="goBack()">Back</button>
