@@ -36,7 +36,8 @@ var MemberUpdateComponent = (function () {
         core_1.Component({
             moduleId: module.id,
             selector: 'memberinsert',
-            templateUrl: './member-update.component.html'
+            templateUrl: './member-update.component.html',
+            styleUrls: ['./member-update.component.css']
         }), 
         __metadata('design:paramtypes', [common_1.Location, router_1.ActivatedRoute, member_service_1.MemberService])
     ], MemberUpdateComponent);

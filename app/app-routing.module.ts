@@ -7,7 +7,7 @@ import { TransactionComponent }     from './transaction.component';
 import { GoogleChatComponent}       from './googlechart.component';
 import { MemberDetailComponent }    from './member-detail.component';
 import { MemberUpdateComponent }    from './member-update.component';
-
+import { ChannelComponent }    from './channel.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/member', pathMatch: 'full' },
@@ -17,7 +17,8 @@ const routes: Routes = [
   { path: 'memberinsert',  component: MemberInsertComponent },
   { path: 'googlechart',  component: GoogleChatComponent },
   { path: 'memberdetail/:id',  component: MemberDetailComponent },
-  { path: 'memberupdate/:id',  component: MemberUpdateComponent }
+  { path: 'memberupdate/:id',  component: MemberUpdateComponent },
+  { path: 'channel',  component: ChannelComponent }
 ];
 
 @NgModule({

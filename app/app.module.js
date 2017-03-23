@@ -27,6 +27,7 @@ var googlechart_component_1 = require('./googlechart.component');
 var member_service_1 = require('./member.service');
 var channel_service_1 = require('./channel.service');
 var member_update_component_1 = require('./member-update.component');
+var channel_component_1 = require('./channel.component');
 var app_routing_module_1 = require('./app-routing.module');
 var angular_in_memory_web_api_1 = require('angular-in-memory-web-api');
 var InMemoryDataService_1 = require('./InMemoryDataService');
@@ -54,7 +55,8 @@ var AppModule = (function () {
                 transaction_bady_component_1.TransactionBadyComponent,
                 googlechart_component_1.GoogleChatComponent,
                 member_detail_component_1.MemberDetailComponent,
-                member_update_component_1.MemberUpdateComponent
+                member_update_component_1.MemberUpdateComponent,
+                channel_component_1.ChannelComponent
             ],
             bootstrap: [app_component_1.AppComponent],
             providers: [member_service_1.MemberService,

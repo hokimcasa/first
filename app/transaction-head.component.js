@@ -16,7 +16,8 @@ var TransactionHeadComponent = (function () {
         core_1.Component({
             moduleId: module.id,
             selector: 'transaction-head',
-            templateUrl: './transaction-head.component.html'
+            templateUrl: './transaction-head.component.html',
+            styleUrls: ['./transaction-head.component.css']
         }), 
         __metadata('design:paramtypes', [])
     ], TransactionHeadComponent);

@@ -1,0 +1,12 @@
+th{
+    width: 150px;
+}
+
+td{
+    width: 250px;
+}
+
+.font-sm{
+    font-size: 50%;
+    height: 10px;
+}

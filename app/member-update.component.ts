@@ -6,7 +6,8 @@ import { MemberService}           from './member.service';
 @Component({
   moduleId: module.id,
   selector: 'memberinsert',
-  templateUrl: './member-update.component.html'
+  templateUrl: './member-update.component.html',
+  styleUrls:['./member-update.component.css']
 })
 
 
