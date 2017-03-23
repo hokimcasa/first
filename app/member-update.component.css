@@ -1,5 +1,5 @@
 th{
-    width: 150px;
+    width: 50px;
 }
 
 td{
@@ -9,4 +9,14 @@ td{
 .font-sm{
     font-size: 50%;
     height: 10px;
+}
+
+input{
+    width: 75%;
+    display:inline;
+}
+
+.input-l{
+    width: 88.75%;
+    display:inline;
 }

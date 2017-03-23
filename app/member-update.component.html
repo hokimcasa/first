@@ -20,27 +20,26 @@
  
     <tr>
       <th scope="row" >手續費</th>
-      <td *ngIf="member.fee">{{member.fee}}%</td>
-      <td *ngIf="channel&&!member.fee">{{channel.fee}}%</td>
+      <td><input [(ngModel)]="member.fee" [ngModelOptions]="{standalone: true}" type="text" class="form-control" value="{{member.fee}}"><span>%</span></td>
       <th>手機</th>
       <td><input [(ngModel)]="member.mobileNO" [ngModelOptions]="{standalone: true}" type="tel" class="form-control" id="phonenumber1" value="{{member.mobileNO}}"></td>
     </tr>
   
     <tr>
       <th scope="row">Email</th>
-      <td colspan="3"><input [(ngModel)]="member.email" [ngModelOptions]="{standalone: true}" type="email" class="form-control" id="email1" value="{{member.email}}"></td>
+      <td colspan="3"><input [(ngModel)]="member.email" [ngModelOptions]="{standalone: true}" type="email" class="form-control input-l" id="email1" value="{{member.email}}" ></td>
     </tr>
     <tr>
       <th>網站</th>
-      <td colspan="3"> <input [(ngModel)]="member.webSite" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="email1" value="{{member.webSite}}"></td>
+      <td colspan="3"> <input [(ngModel)]="member.webSite" [ngModelOptions]="{standalone: true}" type="text" class="form-control input-l" id="email1" value="{{member.webSite}}"></td>
     </tr>
     <tr>
       <th scope="row">地址</th>
-      <td colspan="3"><input [(ngModel)]="member.address" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="email1" value="{{member.address}}"></td>
+      <td colspan="3"><input [(ngModel)]="member.address" [ngModelOptions]="{standalone: true}" type="text" class="form-control input-l" id="email1" value="{{member.address}}"></td>
     </tr>
     <tr>
       <th scope="row">帳號</th>
-      <td colspan="3"><input [(ngModel)]="member.accountNo" [ngModelOptions]="{standalone: true}" type="text" class="form-control" value="{{member.accountNo}}">
+      <td colspan="3"><input [(ngModel)]="member.accountNo" [ngModelOptions]="{standalone: true}" type="text" class="form-control input-l" value="{{member.accountNo}}">
       </td>
     </tr>
     <tr>
