@@ -60,7 +60,7 @@ export class MemberComponent implements OnInit{
         this.channels = channels;
           for(let i=0;i<this.memberssub.length;i++){
           for(let j=0;j<this.channels.length;j++){
-              console.log();
+              // console.log();
               if(this.memberssub[i].channelId===this.channels[j].id){
                   
                   this.memberssub[i].channelId=this.channels[j].channelname;
@@ -84,5 +84,9 @@ export class MemberComponent implements OnInit{
     gotoDetail(memberid:string): void {
       this.selectid = memberid;
       this.router.navigate(['/memberdetail', this.selectid]);
+    }
+
+    goUpdate(memberid:string): void {
+      this.router.navigate(['/memberupdate',memberid]);
     }
   }

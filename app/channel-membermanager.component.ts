@@ -54,6 +54,14 @@ export class ChannelMemberManagerComponent implements OnInit{
 
     gotoDetail(channelid:string): void {
       this.selectid = channelid;
-      this.router.navigate(['/channeldetail', this.selectid]);
+      this.router.navigate(['/memberdetail', this.selectid]);
     }
+
+    delete(member:Member): void {
+      member.channelId='';
+      this.memberService.update(member)
+      .then(() => this.goBack());
+    }
+
+    
   }

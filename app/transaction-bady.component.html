@@ -23,15 +23,12 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let transactionData of transactionDatas">
+                <tr *ngFor="let transactionData of transactionDatas;let i = index">
                 <td>
-                    <!--{{transactionData.date.getFullYear()}}/
-                    {{transactionData.date.getMonth()+1}}/
-                    {{transactionData.date.getDate()}}-->
                     {{transactionData.date.substring(0,10)}}
                 </td>
-                <td>{{transactionData.membername}}</td>
-                <td>{{transactionData.memberlv}}</td>
+                <td>{{transactionData.memberid}}</td>
+                <td>{{transactionData.channelid}}</td>
                 <td>{{transactionData.status}}</td>
                 <td>{{transactionData.money}}</td>
                 <td>{{transactionData.remark}}</td>
@@ -40,8 +37,6 @@
             </tbody>
         </table>
         <nav>
-            <!--{{memid}}
-            {{memidroute}}-->
             <ul class="pagination">
                 <li class="page-item"><a class="page-link" routerLink="/transaction" routerLinkActive="active">Prev</a></li>
                 <li class="page-item"><a class="page-link" routerLink="/transaction" routerLinkActive="active">1</a></li>

@@ -25,8 +25,8 @@
                   <td>{{member.id}}</td>
                   <td>{{member.name}}</td>
                   <td>
-                    <button class="btn btn-outline-success btn-sm" type="button"  (click)="gotoDetail(channel.id)" >資訊</button>
-                    <button class="btn btn-outline-danger btn-sm" type="button">刪除</button>
+                    <button class="btn btn-outline-success btn-sm" type="button"  (click)="gotoDetail(member.id)" >資訊</button>
+                    <button class="btn btn-outline-danger btn-sm" type="button" (click)="delete(member)" >刪除</button>
                   </td> 
                   <td>
                        {{member.description}}

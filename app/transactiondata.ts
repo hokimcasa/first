@@ -5,7 +5,7 @@ export class TransactionData {
   date:Date;  
   status:Status;
   money: number;
-  balance: number;
   memberid:string;
+  channelid:string;
   remark:string;
 }

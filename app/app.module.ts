@@ -22,6 +22,7 @@ import { ChannelComponent }    from './channel.component';
 import { ChannelDetailComponent }   from './channel-detail.component';
 import { ChannelUpdateComponent }   from './channel-update.component';
 import { ChannelMemberManagerComponent }    from './channel-membermanager.component';
+import { TransactionService}           from './transaction.service';
 
 import { AppRoutingModule }     from './app-routing.module';
 
@@ -56,6 +57,7 @@ import {InMemoryDataService} from './InMemoryDataService'
   ],
   bootstrap: [ AppComponent ],
   providers: [ MemberService ,
-               ChannelService ]
+               ChannelService,
+               TransactionService ]
 })
 export class AppModule { }
