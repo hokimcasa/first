@@ -12,7 +12,7 @@
     <tr>
       <th scope="row">姓名</th>
       <td>{{member.name}}</td>
-      <th>通道</th>
+      <th>通路</th>
       <td *ngIf="channel">{{channel.channelname}}</td>
     </tr>
  
@@ -26,28 +26,37 @@
   
     <tr>
       <th scope="row">Email</th>
-      <td>{{member.email}}</td>
-      <th>網站</th>
-      <td>{{member.webSite}}</td>
+      <td colspan="3">{{member.email}}</td>
     </tr>
-   
+   <tr>
+      <th>網站</th>
+      <td colspan="3">{{member.webSite}}</td>
+    </tr>
     <tr>
       <th scope="row">地址</th>
-      <td>{{member.address}}</td>
-      <th>帳號</th>
-      <td>{{member.accountNo}}</td>
+      <td colspan="3">{{member.address}}</td>
     </tr>
     <tr>
-      <th>建立時間</th>
-      <td>{{member.createDate.substring(0,10)}}</td>
-      <th scope="row">建立者</th>
-      <td>{{member.createUser}}</td>      
+      <th scope="row">帳號</th>
+      <td colspan="3">{{member.accountNo}}</td>
     </tr>
     <tr>
-      <th scope="row">最後修改時間</th>
-      <td>{{member.lastUpdate}}</td>
-      <th>修改者</th>
-      <td>{{member.updateUser}}</td>
+      <th></th>
+      <td></td>
+      <td colspan="2">
+         <tr>
+          <th class="font-sm">建立時間</th>
+          <td class="font-sm">{{member.createDate.substring(0,10)}}</td>
+          <th class="font-sm" scope="row">建立者</th>
+          <td class="font-sm">{{member.createUser}}</td>      
+        </tr>
+        <tr>
+          <th scope="row" class="font-sm">最後修改時間</th>
+          <td class="font-sm">{{member.lastUpdate}}</td>
+          <th class="font-sm">修改者</th>
+          <td class="font-sm">{{member.updateUser}}</td>
+        </tr>
+      </td>
     </tr>
   </tbody>
 </table>
