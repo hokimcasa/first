@@ -4,6 +4,9 @@ import { ActivatedRoute, Params,Router } from '@angular/router';
 import { Location }               from '@angular/common';
 import { Channel }                 from './channel';
 import { ChannelService}           from './channel.service';
+import { Member }                 from './member';
+import { MemberService}           from './member.service';
+
 @Component({
   moduleId: module.id,
   selector: 'channelmembermanager',
@@ -15,27 +18,34 @@ export class ChannelMemberManagerComponent implements OnInit{
   temp:Number[];
   memid:number = 0;
   tempDate:Date;
-  channels:Channel[];
+  members:Member[]=[];
   selectid:string;
   constructor(
     private location:Location,
     private route: ActivatedRoute,
     private router: Router,
-    private channelService: ChannelService
+    private memberService: MemberService
     ) { }
 
     ngOnInit():void{
-        this.getChannelMember();
+        this.route.params
+        .subscribe((params: Params)=>{
+            this.getChannelMember(params['id']);
+        });
+        
     }
 
-    getChannelMember():void{
-      this.channelService.getChanneles().then(
-          channels=>this.channels=channels);
-    //       this.route.params
-    //   .switchMap((params: Params) => this.channelService.getChannel(params['id']))
-    //   .subscribe(channel => {
-    //     this.channel = channel;
-    // });
+    getChannelMember(channel:string):void{
+        
+      this.memberService.getMembers().then(
+          members=>{
+              for(let i=0;i<members.length;i++){
+                  if(members[i].channelId==channel){
+                      this.members.push(members[i]);
+                      console.log("applymembers["+i+"]" );
+                  }
+              }
+            });
     }
 
     goBack():void{

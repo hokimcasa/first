@@ -12,26 +12,33 @@ require('rxjs/add/operator/switchMap');
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var common_1 = require('@angular/common');
-var channel_service_1 = require('./channel.service');
+var member_service_1 = require('./member.service');
 var ChannelMemberManagerComponent = (function () {
-    function ChannelMemberManagerComponent(location, route, router, channelService) {
+    function ChannelMemberManagerComponent(location, route, router, memberService) {
         this.location = location;
         this.route = route;
         this.router = router;
-        this.channelService = channelService;
+        this.memberService = memberService;
         this.memid = 0;
+        this.members = [];
     }
     ChannelMemberManagerComponent.prototype.ngOnInit = function () {
-        this.getChannelMember();
-    };
-    ChannelMemberManagerComponent.prototype.getChannelMember = function () {
         var _this = this;
-        this.channelService.getChanneles().then(function (channels) { return _this.channels = channels; });
-        //       this.route.params
-        //   .switchMap((params: Params) => this.channelService.getChannel(params['id']))
-        //   .subscribe(channel => {
-        //     this.channel = channel;
-        // });
+        this.route.params
+            .subscribe(function (params) {
+            _this.getChannelMember(params['id']);
+        });
+    };
+    ChannelMemberManagerComponent.prototype.getChannelMember = function (channel) {
+        var _this = this;
+        this.memberService.getMembers().then(function (members) {
+            for (var i = 0; i < members.length; i++) {
+                if (members[i].channelId == channel) {
+                    _this.members.push(members[i]);
+                    console.log("applymembers[" + i + "]");
+                }
+            }
+        });
     };
     ChannelMemberManagerComponent.prototype.goBack = function () {
         this.location.back();
@@ -47,7 +54,7 @@ var ChannelMemberManagerComponent = (function () {
             templateUrl: './channel-membermanager.component.html',
             styleUrls: ['./channel-membermanager.component.css']
         }), 
-        __metadata('design:paramtypes', [common_1.Location, router_1.ActivatedRoute, router_1.Router, channel_service_1.ChannelService])
+        __metadata('design:paramtypes', [common_1.Location, router_1.ActivatedRoute, router_1.Router, member_service_1.MemberService])
     ], ChannelMemberManagerComponent);
     return ChannelMemberManagerComponent;
 }());

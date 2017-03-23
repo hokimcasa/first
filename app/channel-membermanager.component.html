@@ -21,21 +21,17 @@
                 </tr>
             </thead>
             <tbody>
-                <!--<tr *ngFor="let channel of channels">
-                  <td>{{channel.id}}</td>
-                  <td>{{channel.channelname}}</td>
-                  <td>
-                      {{channel.fee}}％
-                  </td>
-                  <td>
-                     {{channel.description}}
-                  </td>
+                <tr *ngFor="let member of members">
+                  <td>{{member.id}}</td>
+                  <td>{{member.name}}</td>
                   <td>
                     <button class="btn btn-outline-success btn-sm" type="button"  (click)="gotoDetail(channel.id)" >資訊</button>
                     <button class="btn btn-outline-info btn-sm" type="button">會員</button>
                   </td> 
-                  <td></td>
-                </tr>-->
+                  <td>
+                       {{member.description}}
+                  </td>
+                </tr>
             </tbody>
         </table>
         <nav>
