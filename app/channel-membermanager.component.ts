@@ -6,39 +6,44 @@ import { Channel }                 from './channel';
 import { ChannelService}           from './channel.service';
 @Component({
   moduleId: module.id,
-  selector: 'channel',
-  templateUrl: './channel.component.html',
-  styleUrls:['./channel.component.css']
+  selector: 'channelmembermanager',
+  templateUrl: './channel-membermanager.component.html',
+  styleUrls:['./channel-membermanager.component.css']
 })
 
-export class ChannelComponent implements OnInit{
+export class ChannelMemberManagerComponent implements OnInit{
   temp:Number[];
   memid:number = 0;
   tempDate:Date;
   channels:Channel[];
   selectid:string;
   constructor(
+    private location:Location,
     private route: ActivatedRoute,
     private router: Router,
     private channelService: ChannelService
     ) { }
 
     ngOnInit():void{
-        this.getChannel();
+        this.getChannelMember();
     }
 
-    getChannel():void{
+    getChannelMember():void{
       this.channelService.getChanneles().then(
           channels=>this.channels=channels);
+    //       this.route.params
+    //   .switchMap((params: Params) => this.channelService.getChannel(params['id']))
+    //   .subscribe(channel => {
+    //     this.channel = channel;
+    // });
+    }
+
+    goBack():void{
+        this.location.back();
     }
 
     gotoDetail(channelid:string): void {
       this.selectid = channelid;
       this.router.navigate(['/channeldetail', this.selectid]);
-    }
-
-    gotoMemberManager(channelid:string): void {
-      this.selectid = channelid;
-      this.router.navigate(['/channel-membermanager', this.selectid]);
     }
   }

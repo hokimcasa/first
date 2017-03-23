@@ -19,6 +19,9 @@ import { MemberService}           from './member.service';
 import { ChannelService}           from './channel.service';
 import { MemberUpdateComponent }    from './member-update.component';
 import { ChannelComponent }    from './channel.component';
+import { ChannelDetailComponent }   from './channel-detail.component';
+import { ChannelUpdateComponent }   from './channel-update.component';
+import { ChannelMemberManagerComponent }    from './channel-membermanager.component';
 
 import { AppRoutingModule }     from './app-routing.module';
 
@@ -46,7 +49,10 @@ import {InMemoryDataService} from './InMemoryDataService'
     GoogleChatComponent,
     MemberDetailComponent,
     MemberUpdateComponent,
-    ChannelComponent
+    ChannelComponent,
+    ChannelDetailComponent,
+    ChannelUpdateComponent,
+    ChannelMemberManagerComponent
   ],
   bootstrap: [ AppComponent ],
   providers: [ MemberService ,

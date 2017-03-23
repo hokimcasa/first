@@ -19,42 +19,6 @@ var ChannelComponent = (function () {
         this.channelService = channelService;
         this.memid = 0;
     }
-    // getMembersInit():void{
-    //   console.log("InitStart");
-    //   this.memberService.getMembers().then(members=>{
-    //     this.memberssub = members.slice(0,10);
-    //     this.temp = new Array(Math.ceil(members.length/10)).fill(0);
-    //   });
-    //   this.channelService.getChanneles().then(channels=>{
-    //     this.channels = channels;
-    //       for(let i=0;i<this.memberssub.length;i++){
-    //       for(let j=0;j<this.channels.length;j++){
-    //           console.log();
-    //           if(this.memberssub[i].channelId===this.channels[j].id){
-    //               this.memberssub[i].channelId=this.channels[j].channelname;
-    //           }
-    //       }
-    //     }
-    //   });
-    //   console.log("InitEnd");
-    // }
-    // getMembers(index:number):void{
-    //   this.memberService.getMembers().then(members=>{
-    //     this.memberssub = members.slice(0+index*10,10+index*10);
-    //     this.temp = new Array(Math.ceil(members.length/10)).fill(0);
-    //   });
-    //   this.channelService.getChanneles().then(channels=>{
-    //     this.channels = channels;
-    //       for(let i=0;i<this.memberssub.length;i++){
-    //       for(let j=0;j<this.channels.length;j++){
-    //           console.log();
-    //           if(this.memberssub[i].channelId===this.channels[j].id){
-    //               this.memberssub[i].channelId=this.channels[j].channelname;
-    //           }
-    //       }
-    //     }
-    //   });
-    // }
     ChannelComponent.prototype.ngOnInit = function () {
         this.getChannel();
     };
@@ -65,6 +29,10 @@ var ChannelComponent = (function () {
     ChannelComponent.prototype.gotoDetail = function (channelid) {
         this.selectid = channelid;
         this.router.navigate(['/channeldetail', this.selectid]);
+    };
+    ChannelComponent.prototype.gotoMemberManager = function (channelid) {
+        this.selectid = channelid;
+        this.router.navigate(['/channel-membermanager', this.selectid]);
     };
     ChannelComponent = __decorate([
         core_1.Component({

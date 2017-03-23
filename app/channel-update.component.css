@@ -1,0 +1,17 @@
+th{
+    width: 50px;
+}
+
+td{
+    width: 200px;
+}
+
+.font-sm{
+    font-size: 50%;
+    height: 10px;
+}
+
+input{
+    width: 75%;
+    display:inline;
+}

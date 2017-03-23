@@ -9,13 +9,13 @@
       <th scope="row">ID</th>
       <td >{{channel.id}}</td>
       <th scope="row" >種類</th>
-      <td>{{channel.description}}%</td>
+      <td><input [(ngModel)]="channel.description" [ngModelOptions]="{standalone: true}" type="text" class="form-control" value="{{channel.description}}"></td>
     </tr>
     <tr>
       <th>名稱</th>
-      <td>{{channel.channelname}}</td>
+      <td><input [(ngModel)]="channel.channelname" [ngModelOptions]="{standalone: true}" type="text" class="form-control" value="{{channel.channelname}}"></td>
       <th>手續費</th>
-      <td >{{channel.fee}}%</td>
+      <td ><input [(ngModel)]="channel.fee" [ngModelOptions]="{standalone: true}" type="text" class="form-control" value="{{channel.fee}}"><span>%</span></td>
     </tr>
  
     <tr>
@@ -32,5 +32,5 @@
     </tr>
   </tbody>
 </table>
- <button class="btn btn-info" (click)="goUpdate(channel.id)">修改</button>
+ <button class="btn btn-primary" (click)="update(channel.id)">修改</button>
  <button class="btn btn-secondary" (click)="goBack()">Back</button>

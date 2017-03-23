@@ -17,6 +17,9 @@ var googlechart_component_1 = require('./googlechart.component');
 var member_detail_component_1 = require('./member-detail.component');
 var member_update_component_1 = require('./member-update.component');
 var channel_component_1 = require('./channel.component');
+var channel_detail_component_1 = require('./channel-detail.component');
+var channel_update_component_1 = require('./channel-update.component');
+var channel_membermanager_component_1 = require('./channel-membermanager.component');
 var routes = [
     { path: '', redirectTo: '/member', pathMatch: 'full' },
     { path: 'member', component: member_component_1.MemberComponent },
@@ -26,7 +29,10 @@ var routes = [
     { path: 'googlechart', component: googlechart_component_1.GoogleChatComponent },
     { path: 'memberdetail/:id', component: member_detail_component_1.MemberDetailComponent },
     { path: 'memberupdate/:id', component: member_update_component_1.MemberUpdateComponent },
-    { path: 'channel', component: channel_component_1.ChannelComponent }
+    { path: 'channel', component: channel_component_1.ChannelComponent },
+    { path: 'channeldetail/:id', component: channel_detail_component_1.ChannelDetailComponent },
+    { path: 'channelupdate/:id', component: channel_update_component_1.ChannelUpdateComponent },
+    { path: 'channel-membermanager/:id', component: channel_membermanager_component_1.ChannelMemberManagerComponent }
 ];
 var AppRoutingModule = (function () {
     function AppRoutingModule() {
