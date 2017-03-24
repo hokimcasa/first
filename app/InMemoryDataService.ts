@@ -40,13 +40,13 @@ export class InMemoryDataService implements InMemoryDbService{
       {id:'T00001',transactionDate:new Date('2012-10-21'),money:200,
       memberid: 'A123456789',remark:'',buyerName:'遠雄',buyerAccountNo:'4556755849763098',productList:'炒麵,餛飩麵,肉羹麵',postingDate:new Date('2010-10-28')},
       {id:'T00002',transactionDate:new Date('2012-10-25'),money:200,
-      memberid: 'A123456789',remark:'',buyerName:'誠品',buyerAccountNo:'5220496195092724',productList:'滷肉飯*3碗,肉絲炒麵*1盤,水餃*20個',postingDate:new Date('2010-11-02')},
+      memberid: 'A123456789',remark:'',buyerName:'誠品',buyerAccountNo:'5220496195092724',productList:'滷肉飯,肉絲炒麵,水餃',postingDate:new Date('2010-11-02')},
       {id:'T00003',transactionDate:new Date('2012-11-01'),money:100,
-      memberid: 'B234567898',remark:'',buyerName:'新光',buyerAccountNo:'4539335023351721',productList:'高麗菜*3斤,青江菜*3斤,冬瓜*3斤,四季豆*4斤,秀珍菇*3斤',postingDate:new Date('2010-11-08')},
+      memberid: 'B234567898',remark:'',buyerName:'新光',buyerAccountNo:'4539335023351721',productList:'高麗菜,青江菜,冬瓜,四季豆,秀珍菇',postingDate:new Date('2010-11-08')},
       {id:'T00004',transactionDate:new Date('2012-11-03'),money:1000,
-      memberid: 'B234567898',remark:'',buyerName:'寶麗',buyerAccountNo:'5556517554420687',productList:'地瓜葉*6斤,芥菜*7斤,菠菜*20斤',postingDate:new Date('2010-11-10')},
+      memberid: 'B234567898',remark:'',buyerName:'寶麗',buyerAccountNo:'5556517554420687',productList:'地瓜葉,芥菜,菠菜',postingDate:new Date('2010-11-10')},
       {id:'T00005',transactionDate:new Date('2012-11-05'),money:200,
-      memberid: 'B234567898',remark:'',buyerName:'Parking',buyerAccountNo:'4929154604848783',productList:'鴻禧菇*1斤,美白菇*5斤,草菇*7斤,秀珍菇*5斤,蘑菇*2斤',postingDate:new Date('2010-11-12')}
+      memberid: 'B234567898',remark:'',buyerName:'Parking',buyerAccountNo:'4929154604848783',productList:'鴻禧菇,美白菇,草菇,秀珍菇,蘑菇',postingDate:new Date('2010-11-12')}
     ];
 
     return {members,channels,transactions};
