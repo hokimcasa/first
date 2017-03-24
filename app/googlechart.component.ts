@@ -18,17 +18,18 @@ export class GoogleChatComponent extends GoogleChartComponent implements OnInit 
     console.log("DrawGraph Evolution...");  
     // 所要顯示的資料
     this.data = this.createDataTable([
-      ['Evolution', 'Imports', 'Exports'],
-      ['A', 8695000, 6422800],
-      ['B', 3792000, 3694000],
-      ['C', 8175000, 800800]
+      ['Evolution', '會員人數'],
+      ['通化街夜市', 4],
+      ['奇怪網路商城', 3],
+      ['某山頭小農', 2],
+      ['奇幻網路遊戲', 3]
     ]);
     //給予的設定
-    this.options = {'title':'How Much Pizza I Ate Last Night',
-                       'width':400,
-                       'height':300};
+    this.options = {'title':'通路會員人數',
+                       'width':550,
+                       'height':400};
     //依所呼叫的函數決定所畫的圖表類型，依傳入的參數決定土俵所顯示的地方。
-    this.chart = this.createPieChart(document.getElementById('chart1'));
+    this.chart = this.createBarChart(document.getElementById('chart1'));
     this.chart.draw(this.data, this.options);
   }
     
