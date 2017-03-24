@@ -35,9 +35,11 @@
     </tr>
     <tr>
       <th >商品</th>
-      <td colspan="3">{{transaction.productList}}</td>
+      <td colspan="3">
+        <textarea cols="50" rows="5" class="form-control inputmultline">{{transaction.productList}}</textarea>
+      </td>
     </tr>
  
   </tbody>
 </table>
- <button class="btn btn-secondary" (click)="goBack()">Back</button>
+ <button class="btn btn-secondary btman" (click)="goBack()">Back</button>
