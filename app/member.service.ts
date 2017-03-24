@@ -37,9 +37,11 @@ export class MemberService {
       .catch(this.handleError);
   }
 
-  create(name: string): Promise<Member> {
+  create(member: Member): Promise<Member> {
     return this.http
-      .post(this.MemberesUrl, JSON.stringify({name: name}), {headers: this.headers})
+      .post(this.MemberesUrl, JSON.stringify({name: member.name,fee:member.fee, mobileNO:member.mobileNO,
+                                              accountNo:member.accountNo,email:member.email,address:member.address,
+                                              webSite:member.webSite,createDate:new Date()}), {headers: this.headers})
       .toPromise()
       .then(res => res.json().data)
       .catch(this.handleError);

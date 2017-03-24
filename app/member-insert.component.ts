@@ -22,4 +22,9 @@ export class MemberInsertComponent{
     this.location.back();
   }
 
+  Insert(member: Member): void {
+    if (!member) { return; }
+    this.memberService.create(member)
+      .then();
+  }
 }
