@@ -38,7 +38,7 @@
     </tr>
     <tr>
       <th scope="row">帳號</th>
-      <td colspan="3">{{member.accountNo}}</td>
+      <td colspan="3">{{member.accountNo.substring(0,4)}}-{{member.accountNo.substring(4,8)}}-{{member.accountNo.substring(8,12)}}-{{member.accountNo.substring(12,member.accountNo.length)}}</td>
     </tr>
     <tr>
       <th></th>

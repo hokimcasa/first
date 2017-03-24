@@ -27,15 +27,16 @@
       <th>買家姓名</th>
       <td >{{transaction.buyerName}}</td>
       <th>買家帳號</th>
-      <td>{{transaction.buyerAccountNo}}</td>
+      <td>{{transaction.buyerAccountNo.substring(0,4)}}-{{transaction.buyerAccountNo.substring(4,8)}}-{{transaction.buyerAccountNo.substring(8,12)}}-{{transaction.buyerAccountNo.substring(12,transaction.buyerAccountNo.length)}}</td>
     </tr>
     <tr>
-      <th >商品名</th>
-      <td>{{transaction.productName}}</td>
-      <th >金額</th>
-      <td>{{transaction.money}}元</td>     
+      <th >總金額</th>
+      <td  colspan="3">{{transaction.money}}元</td>     
     </tr>
- 
+    <tr>
+      <th >商品</th>
+      <td colspan="3">{{transaction.productList}}</td>
+    </tr>
  
   </tbody>
 </table>

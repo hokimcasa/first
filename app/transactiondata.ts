@@ -9,6 +9,6 @@ export class TransactionData {
   remark:string;
   buyerName:string;
   buyerAccountNo:string;
-  productName:string;
+  productList:string;
   postingDate:Date;
 }
