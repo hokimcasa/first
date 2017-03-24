@@ -19,11 +19,13 @@ export class GoogleChartComponent implements OnInit {
         console.log(GoogleChartComponent.googleLoaded);
       GoogleChartComponent.googleLoaded = true;
       google.charts.load('current',  {packages: ['corechart', 'bar']});
+      //google.charts.load(版本 ex:'current',  圖的種類 ex:{packages: ['corechart', 'bar']});
     }
     google.charts.setOnLoadCallback(() => this.drawGraph());
   }
 
   drawGraph(){
+      
       console.log("DrawGraph base class!!!! ");
   }
 

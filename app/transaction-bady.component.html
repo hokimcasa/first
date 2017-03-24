@@ -17,7 +17,6 @@
                     <th>日期</th>
                     <th>姓名</th>
                     <th>等級</th>
-                    <th>類型</th>
                     <th>金額</th>
                     <th>備註</th>
                 </tr>
@@ -25,11 +24,10 @@
             <tbody>
                 <tr *ngFor="let transactionData of transactionDatas;let i = index" (click)="gotoDetail(transactionData.id)">
                 <td>
-                    {{transactionData.date.substring(0,10)}}
+                    {{transactionData.transactionDate.substring(0,10)}}
                 </td>
                 <td>{{transactionData.memberid}}</td>
                 <td>{{transactionData.channelid}}</td>
-                <td>{{transactionData.status}}</td>
                 <td>{{transactionData.money}}</td>
                 <td>{{transactionData.remark}}</td>
                 </tr>

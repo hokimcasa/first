@@ -24,6 +24,7 @@ import { ChannelUpdateComponent }   from './channel-update.component';
 import { ChannelMemberManagerComponent }    from './channel-membermanager.component';
 import { TransactionService}           from './transaction.service';
 import { TransactionDetailComponent}           from './transaction-detail.component';
+import { LoginComponent} from './login.component';                 
 
 import { AppRoutingModule }     from './app-routing.module';
 
@@ -55,7 +56,8 @@ import {InMemoryDataService} from './InMemoryDataService'
     ChannelDetailComponent,
     ChannelUpdateComponent,
     ChannelMemberManagerComponent,
-    TransactionDetailComponent
+    TransactionDetailComponent,
+    LoginComponent
   ],
   bootstrap: [ AppComponent ],
   providers: [ MemberService ,

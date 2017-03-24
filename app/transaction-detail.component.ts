@@ -16,7 +16,7 @@ import { Location}   from '@angular/common';
 })
 export class TransactionDetailComponent implements OnInit{
     transaction:TransactionData;
-   
+    channel:Channel;
     constructor(private transactionService:TransactionService,
                 private memberService:MemberService,
                 private channelService:ChannelService,
@@ -34,7 +34,7 @@ export class TransactionDetailComponent implements OnInit{
                                             this.transaction.memberid=member.name;
                                             this.channelService
                                             .getChannel(member.channelId)
-                                            .then(channel=>this.transaction.channelid=channel.channelname);
+                                            .then(channel=>this.channel=channel);
                                         });
                                     });
     }

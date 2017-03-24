@@ -37,16 +37,16 @@ export class InMemoryDataService implements InMemoryDbService{
     ];
 
     let transactions = [
-      {id:'T00001',date:new Date('2012-10-21'),status:'花費',money:200,
-      memberid: 'A123456789',remark:''},
-      {id:'T00002',date:new Date('2012-10-25'),status:'花費',money:200,
-      memberid: 'A123456789',remark:''},
-      {id:'T00003',date:new Date('2012-11-01'),status:'花費',money:100,
-      memberid: 'B234567898',remark:''},
-      {id:'T00004',date:new Date('2012-11-03'),status:'儲值',money:1000,
-      memberid: 'B234567898',remark:''},
-      {id:'T00005',date:new Date('2012-11-05'),status:'花費',money:200,
-      memberid: 'B234567898',remark:''}
+      {id:'T00001',transactionDate:new Date('2012-10-21'),money:200,
+      memberid: 'A123456789',remark:'',buyerName:'遠雄',buyerAccountNo:'farglory',productName:'炒麵',postingDate:new Date('2010-10-28')},
+      {id:'T00002',transactionDate:new Date('2012-10-25'),money:200,
+      memberid: 'A123456789',remark:'',buyerName:'誠品',buyerAccountNo:'esliteliving',productName:'滷肉飯',postingDate:new Date('2010-11-02')},
+      {id:'T00003',transactionDate:new Date('2012-11-01'),money:100,
+      memberid: 'B234567898',remark:'',buyerName:'新光',buyerAccountNo:'shinkong',productName:'高麗菜',postingDate:new Date('2010-11-08')},
+      {id:'T00004',transactionDate:new Date('2012-11-03'),money:1000,
+      memberid: 'B234567898',remark:'',buyerName:'寶麗',buyerAccountNo:'bellavita',productName:'地瓜葉',postingDate:new Date('2010-11-10')},
+      {id:'T00005',transactionDate:new Date('2012-11-05'),money:200,
+      memberid: 'B234567898',remark:'',buyerName:'Parking',buyerAccountNo:'parking',productName:'大白菜',postingDate:new Date('2010-11-12')}
     ];
 
     return {members,channels,transactions};

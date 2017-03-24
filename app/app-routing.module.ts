@@ -12,6 +12,7 @@ import { ChannelDetailComponent }    from './channel-detail.component';
 import { ChannelUpdateComponent }    from './channel-update.component';
 import { ChannelMemberManagerComponent }    from './channel-membermanager.component';
 import { TransactionDetailComponent }    from './transaction-detail.component';
+import { LoginComponent }    from './login.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/member', pathMatch: 'full' },
@@ -26,7 +27,8 @@ const routes: Routes = [
   { path: 'channeldetail/:id',  component: ChannelDetailComponent },
   { path: 'channelupdate/:id',  component: ChannelUpdateComponent },
   { path: 'channel-membermanager/:id',  component: ChannelMemberManagerComponent },
-  { path: 'transactiondetail/:id',  component: TransactionDetailComponent }
+  { path: 'transactiondetail/:id',  component: TransactionDetailComponent },
+  { path: 'login',  component: LoginComponent }
 ];
 
 @NgModule({
