@@ -4,32 +4,32 @@ import { FormsModule }   from '@angular/forms';
 import { HttpModule}     from '@angular/http'; 
 
 import { AppComponent }  from './app.component';
-import { MyHeadComponent }  from './myhead.component';
-import { MyBadyComponent }  from './mybady.component';
-import { MyFunctionComponent }  from './myfunction.component ';
-import { MyContentComponent }  from './mycontent.component';
-import { MemberComponent }   from './member.component';
-import { MemberInsertComponent }   from './member-insert.component';
-import { MemberDetailComponent }   from './member-detail.component';
-import { TransactionComponent }   from './transaction.component';
-import { TransactionHeadComponent }   from './transaction-head.component';
-import { TransactionBadyComponent }   from './transaction-bady.component';
-import { GoogleChatComponent}         from './googlechart.component';
-import { MemberService}           from './member.service';
-import { ChannelService}           from './channel.service';
-import { MemberUpdateComponent }    from './member-update.component';
-import { ChannelComponent }    from './channel.component';
-import { ChannelDetailComponent }   from './channel-detail.component';
-import { ChannelUpdateComponent }   from './channel-update.component';
-import { ChannelMemberManagerComponent }    from './channel-membermanager.component';
-import { TransactionService}           from './transaction.service';
-import { TransactionDetailComponent}           from './transaction-detail.component';
-import { LoginComponent} from './login.component';                 
+import { MyHeadComponent }  from './myhead/myhead.component';
+import { MyBadyComponent }  from './mybady/mybady.component';
+import { MyFunctionComponent }  from './myfunction/myfunction.component ';
+import { MyContentComponent }  from './mycontent/mycontent.component';
+import { MemberComponent }   from './member/member.component';
+import { MemberInsertComponent }   from './member/insert/member-insert.component';
+import { MemberDetailComponent }   from './member/detail/member-detail.component';
+import { TransactionComponent }   from './transaction/transaction.component';
+import { TransactionHeadComponent }   from './transaction/head/transaction-head.component';
+import { TransactionBadyComponent }   from './transaction/bady/transaction-bady.component';
+import { GoogleChartComponent}         from './chart/googlechart/googlechart.component';
+import { MemberService}           from './member/member.service';
+import { ChannelService}           from './channel/channel.service';
+import { MemberUpdateComponent }    from './member/update/member-update.component';
+import { ChannelComponent }    from './channel/channel.component';
+import { ChannelDetailComponent }   from './channel/detail/channel-detail.component';
+import { ChannelUpdateComponent }   from './channel/update/channel-update.component';
+import { ChannelMemberManagerComponent }    from './channel/membermanager/channel-membermanager.component';
+import { TransactionService}           from './transaction/transaction.service';
+import { TransactionDetailComponent}           from './transaction/detail/transaction-detail.component';
+import { LoginComponent} from './login/login.component';                 
 
 import { AppRoutingModule }     from './app-routing.module';
 
 import {InMemoryWebApiModule} from 'angular-in-memory-web-api'
-import {InMemoryDataService} from './InMemoryDataService'
+import {InMemoryDataService} from './inMemoryData/InMemoryDataService'
 
 @NgModule({
   imports: [
@@ -49,7 +49,7 @@ import {InMemoryDataService} from './InMemoryDataService'
     TransactionComponent,
     TransactionHeadComponent,
     TransactionBadyComponent,
-    GoogleChatComponent,
+    GoogleChartComponent,
     MemberDetailComponent,
     MemberUpdateComponent,
     ChannelComponent,

@@ -3,7 +3,7 @@ declare var google:any;
 @Component({
   selector: 'chart'
 })
-export class GoogleChartComponent implements OnInit {
+export class ChartComponent implements OnInit {
   private static googleLoaded:any;
 
   constructor(){
@@ -15,9 +15,9 @@ export class GoogleChartComponent implements OnInit {
   }
   ngOnInit() {
     console.log('ngOnInit');
-    if(!GoogleChartComponent.googleLoaded) {
-        console.log(GoogleChartComponent.googleLoaded);
-      GoogleChartComponent.googleLoaded = true;
+    if(!ChartComponent.googleLoaded) {
+        console.log(ChartComponent.googleLoaded);
+      ChartComponent.googleLoaded = true;
       google.charts.load('current',  {packages: ['corechart', 'bar']});
       //google.charts.load(版本 ex:'current',  圖的種類 ex:{packages: ['corechart', 'bar']});
     }

@@ -1,5 +1,5 @@
 import { Component,OnInit } from '@angular/core';
-import { GoogleChartComponent }from './chart.component';
+import { ChartComponent }from '../chart.component';
 
 @Component({
   moduleId: module.id,
@@ -7,7 +7,7 @@ import { GoogleChartComponent }from './chart.component';
   templateUrl: './googlechart.component.html'
 })
 
-export class GoogleChatComponent extends GoogleChartComponent implements OnInit {
+export class GoogleChartComponent extends ChartComponent implements OnInit {
     
   private options:any;
   private data:any;

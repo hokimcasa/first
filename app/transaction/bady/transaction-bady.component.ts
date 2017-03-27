@@ -1,12 +1,12 @@
 import { Component, Input,OnInit } from '@angular/core';
 import { ActivatedRoute, Params,Router } from '@angular/router';
 
-import { TransactionData } from './transactiondata';
-import { TransactionService }from './transaction.service';
-import { Member } from './member';
-import { MemberService }from './member.service';
-import { Channel } from './channel';
-import { ChannelService }from './channel.service';
+import { TransactionData } from '../transactiondata';
+import { TransactionService }from '../transaction.service';
+import { Member } from '../../member/member';
+import { MemberService }from '../../member/member.service';
+import { Channel } from '../../channel/channel';
+import { ChannelService }from '../../channel/channel.service';
 
 @Component({
   moduleId: module.id,

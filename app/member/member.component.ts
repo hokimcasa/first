@@ -4,8 +4,8 @@ import { ActivatedRoute, Params,Router } from '@angular/router';
 import { Location }               from '@angular/common';
 import { Member }               from './member';
 import { MemberService } from './member.service';
-import { Channel }                 from './channel';
-import { ChannelService}           from './channel.service';
+import { Channel }                 from '../channel/channel';
+import { ChannelService}           from '../channel/channel.service';
 @Component({
   moduleId: module.id,
   selector: 'member',

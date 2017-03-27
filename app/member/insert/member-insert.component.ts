@@ -1,7 +1,7 @@
 import { Component }        from '@angular/core';
-import { Member }           from './member';
+import { Member }           from '../member';
 import { Location}          from '@angular/common';
-import { MemberService}     from'./member.service';
+import { MemberService}     from'../member.service';
 @Component({
   moduleId: module.id,
   selector: 'memberinsert',

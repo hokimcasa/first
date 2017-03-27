@@ -1,11 +1,11 @@
 import 'rxjs/add/operator/switchMap';
 import { Component, OnInit }      from '@angular/core';
 import { ActivatedRoute, Params,Router } from '@angular/router';
-import { Member }                 from './member';
-import { MemberService}           from './member.service';
+import { Member }                 from '../../member/member';
+import { MemberService}           from '../../member/member.service';
 import { Location}                from '@angular/common';
-import { Channel }                 from './channel';
-import { ChannelService}           from './channel.service';
+import { Channel }                 from '../channel';
+import { ChannelService}           from '../channel.service';
 @Component({
   moduleId: module.id,
   selector: 'channeldetail',

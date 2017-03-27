@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Channel }    from './channel';
+import { Channel }    from '../channel';
 import { Location}   from '@angular/common';
 import { ActivatedRoute, Params,Router } from '@angular/router';
-import { ChannelService}           from './channel.service';
+import { ChannelService}           from '../channel.service';
 @Component({
   moduleId: module.id,
   selector: 'channelinsert',

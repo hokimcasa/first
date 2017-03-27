@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Member }    from './member';
+import { Member }    from '../member';
 import { Location}   from '@angular/common';
 import { ActivatedRoute, Params,Router } from '@angular/router';
-import { MemberService}           from './member.service';
+import { MemberService}           from '../member.service';
 @Component({
   moduleId: module.id,
   selector: 'memberinsert',
