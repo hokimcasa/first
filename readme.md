@@ -1,4 +1,5 @@
-目錄結構:
+Project structure:
+==================
         app             放置個元件
         assets          放入coreui所用的css,font,img 
         css             放入bootstrapm4用的css
