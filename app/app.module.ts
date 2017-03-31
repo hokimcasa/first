@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }   from '@angular/forms';
 import { HttpModule}     from '@angular/http'; 
 
+import { CookieService}          from './user/cookie.service';
+
 import { AppComponent }  from './app.component';
 import { MyHeadComponent }  from './myhead/myhead.component';
 import { MyBadyComponent }  from './mybady/mybady.component';
@@ -24,17 +26,17 @@ import { ChannelUpdateComponent }   from './channel/update/channel-update.compon
 import { ChannelMemberManagerComponent }    from './channel/membermanager/channel-membermanager.component';
 import { TransactionService}           from './transaction/transaction.service';
 import { TransactionDetailComponent}           from './transaction/detail/transaction-detail.component';
-import { LoginComponent} from './login/login.component';                 
+import { LoginComponent} from './login/login.component';     
+import { UserService }           from './user/user.service';            
 
 import { AppRoutingModule }     from './app-routing.module';
-
 import {InMemoryWebApiModule} from 'angular-in-memory-web-api'
 import {InMemoryDataService} from './inMemoryData/InMemoryDataService'
 
 @NgModule({
   imports: [
     HttpModule,
-    InMemoryWebApiModule.forRoot(InMemoryDataService),
+    InMemoryWebApiModule.forRoot(InMemoryDataService, {passThruUnknownUrl: true}),
     BrowserModule,
     FormsModule,
     AppRoutingModule],
@@ -62,6 +64,8 @@ import {InMemoryDataService} from './inMemoryData/InMemoryDataService'
   bootstrap: [ AppComponent ],
   providers: [ MemberService ,
                ChannelService,
-               TransactionService ]
+               TransactionService,
+               UserService,
+               CookieService]
 })
 export class AppModule { }
