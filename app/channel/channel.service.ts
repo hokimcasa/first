@@ -14,9 +14,9 @@ export class ChannelService {
   constructor(private http: Http) { }
 
   getChanneles(): Promise<Channel[]> {
-    return this.http.get(this.channelsURL)
+    return this.http.get('http://localhost:4567/channel')
                .toPromise()
-               .then(response => response.json().data as Channel[])
+               .then(response => response.json() as Channel[])
                .catch(this.handleError);
   }
 

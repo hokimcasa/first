@@ -4,5 +4,5 @@ export class Channel {
   fee:string;
   description:string;
   createDate:Date;
-  createUser:number;
+  createUser:string;
 }

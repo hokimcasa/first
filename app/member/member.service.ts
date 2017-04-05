@@ -14,9 +14,16 @@ export class MemberService {
   constructor(private http: Http) { }
 
   getMembers(): Promise<Member[]> {
-    return this.http.get(this.MemberesUrl)
+    //給InMemoryData用
+    // return this.http.get('http://localhost:4567/member')
+    //            .toPromise()
+    //            .then(response => response.json().data as Member[])
+    //            .catch(this.handleError);
+    //------------------------------------------------------------------
+    //給從後台回傳資料用     出處    http://stackoverflow.com/questions/41921403/how-to-get-an-array-from-json-data-in-angular-2
+    return this.http.get('http://localhost:4567/member')
                .toPromise()
-               .then(response => response.json().data as Member[])
+               .then(response => response.json() as Member[])
                .catch(this.handleError);
   }
 

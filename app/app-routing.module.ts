@@ -15,7 +15,7 @@ import { TransactionDetailComponent }    from './transaction/detail/transaction-
 import { LoginComponent }    from './login/login.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/member', pathMatch: 'full' },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'member',  component: MemberComponent },
   { path: 'transaction',  component: TransactionComponent },
   { path: 'member/:index',  component: MemberComponent },

@@ -3,8 +3,8 @@
         <div class="col-4"> </div>
         <div class="col-4">
             <form class="form-signin">
-                <label for="inputEmail" >帳號</label>
-                <input [(ngModel)]="user.name" [ngModelOptions]="{standalone: true}" type="email" id="inputEmail" class="form-control" required autofocus>
+                <label for="inpuId" >帳號</label>
+                <input [(ngModel)]="user.id" [ngModelOptions]="{standalone: true}" type="text" id="inputId" class="form-control" required autofocus>
                 <label for="inputPassword" >密碼</label>
                 <input [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}" type="password" id="inputPassword" class="form-control"  required>
                 <div class="row mt">
@@ -16,7 +16,7 @@
                         <button class="btn btn-secondary" (click)="goBack()">Back</button>
                     </div>
                     <div class="col-3"> 
-                        <button class="btn btn-secondary" (click)="test()" type="button">test</button>
+                        <!--<button class="btn btn-secondary" (click)="test()" type="button">test</button>-->
                     </div>
                 </div>
                 

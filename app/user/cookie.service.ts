@@ -26,7 +26,8 @@ export class CookieService {
 
   public setCookie(name: string, value: string, expireDays: number, path: string = "") {
     let d: Date = new Date();
-    d.setTime(d.getTime() + expireDays * 24 * 60 * 60 * 1000);
+    // d.setTime(d.getTime() + expireDays * 24 * 60 * 60 * 1000); OG
+    d.setTime(d.getTime() + expireDays * (24+8) * 60 * 60 * 1000);
     let expires: string = "expires=" + d.toUTCString();
     document.cookie = name + "=" + value + "; " + expires + (path.length > 0 ? "; path=" + path : "");
   }

@@ -3,7 +3,7 @@ import { InMemoryDbService } from 'angular-in-memory-web-api';
 export class InMemoryDataService implements InMemoryDbService{
   createDb(){
     let members = [
-      {id:'A123456789',name:'張三蚵仔煎',channelId:'C00001',fee:'99',mobileNO:'0987654321',accountNo:'5424282625847430',email:'test1@sample.com',address:'106臺北市大安區新生南路2段86號',
+      {id:'A123456789',name:'張三蚵仔煎',channelId:'C00001',fee:'13',mobileNO:'0987654321',accountNo:'5424282625847430',email:'test1@sample.com',address:'""106臺北市大安區新生南路2段86號""',
        webSite:'http://sample1.com.tw',createDate:new Date('2010-10-29T12:00:00Z'),createUser:'',lastUpdate:'',updateUser:''},
       {id:'B234567898',name:'李四高麗菜',channelId:'C00003',fee:'',mobileNO:'0912345678',accountNo:'5447687481611782',email:'test2@sample.com',address:'台北市松山區八德路四段692號7-11樓',
        webSite:'http://sample2.com.tw',createDate:new Date('2010-10-29T11:00:00Z'),createUser:'',lastUpdate:'',updateUser:''},
@@ -11,7 +11,7 @@ export class InMemoryDataService implements InMemoryDbService{
        webSite:'http://sample3.com.tw',createDate:new Date('2010-10-29'),createUser:'',lastUpdate:'',updateUser:''},
        {id:'77777777',name:'新奇玩具',channelId:'C00002',fee:'',mobileNO:'0928765573',accountNo:'5177025611233076',email:'test4@sample.com',address:'臺北市文山區木柵路三段220號',
        webSite:'http://sample4.com.tw',createDate:new Date('2010-10-29'),createUser:'',lastUpdate:'',updateUser:''},
-       {id:'77777777',name:'亨通體育用品',channelId:'C00002',fee:'',mobileNO:'0928765574',accountNo:'5215787439434830',email:'test5@sample.com',address:'臺北市中正區羅斯福路1段8號',
+       {id:'66666666',name:'亨通體育用品',channelId:'C00002',fee:'',mobileNO:'0928765574',accountNo:'5215787439434830',email:'test5@sample.com',address:'臺北市中正區羅斯福路1段8號',
        webSite:'http://sample5.com.tw',createDate:new Date('2010-10-29'),createUser:'',lastUpdate:'',updateUser:''},
        {id:'87654321',name:'很好玩線上遊戲',channelId:'C00004',fee:'',mobileNO:'0928765575',accountNo:'4929528255046096',email:'test6@sample.com',address:'文山區興隆路二段160號',
        webSite:'http://sample6.com.tw',createDate:new Date('2010-10-29'),createUser:'',lastUpdate:'',updateUser:''},

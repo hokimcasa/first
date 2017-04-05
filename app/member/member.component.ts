@@ -28,27 +28,41 @@ export class MemberComponent implements OnInit{
     ) { }
 
     getMembersInit():void{
-      console.log("InitStart");
+      // this.memberService.getMembers().then(members=>{
+      //   console.log("getAll "+members);
+      //   this.memberssub = members.slice(0,10);
+      //   this.temp = new Array(Math.ceil(members.length/10)).fill(0);
+
+      // });
+      // this.channelService.getChanneles().then(channels=>{
+      //   this.channels = channels;
+      //     for(let i=0;i<this.memberssub.length;i++){
+      //     for(let j=0;j<this.channels.length;j++){
+      //         console.log();
+      //         if(this.memberssub[i].channelId===this.channels[j].id){
+                  
+      //             this.memberssub[i].channelId=this.channels[j].channelname;
+      //         }
+      //     }
+      //   }
+      // });
       this.memberService.getMembers().then(members=>{
+        console.log("getAll "+members);
         this.memberssub = members.slice(0,10);
         this.temp = new Array(Math.ceil(members.length/10)).fill(0);
-
-      });
-      this.channelService.getChanneles().then(channels=>{
-        this.channels = channels;
-          for(let i=0;i<this.memberssub.length;i++){
-          for(let j=0;j<this.channels.length;j++){
-              console.log();
-              if(this.memberssub[i].channelId===this.channels[j].id){
-                  
-                  this.memberssub[i].channelId=this.channels[j].channelname;
-              }
+        this.channelService.getChanneles().then(channels=>{
+          this.channels = channels;
+            for(let i=0;i<this.memberssub.length;i++){
+            for(let j=0;j<channels.length;j++){
+                console.log();
+                if(this.memberssub[i].channelId===channels[j].id){
+                    this.memberssub[i].channelId=channels[j].channelname;
+                }
+            }
           }
-        }
+        });
       });
-
       
-      console.log("InitEnd");
     }
 
     getMembers(index:number):void{

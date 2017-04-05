@@ -1,20 +1,19 @@
 import { Injectable }    from '@angular/core';
 import { Headers, Http} from '@angular/http';
 import { Location}          from '@angular/common';
-import { CookieService}          from './cookie.service';
 import 'rxjs/add/operator/toPromise';
 
+import { Cookie } from 'ng2-cookies/ng2-cookies';
 import { User }    from './user';
 
 @Injectable()
 export class UserService {
 
-  private headers = new Headers({'Content-Type': 'application/json'});
+  private headers = new Headers({'Content-Type': 'application/json','withCredentials':true});
   private UserUrl = 'http://localhost:4567/user/login';  // URL to web api
 
   constructor(private http: Http,
-              private location: Location,
-              private cookieService:CookieService
+              private location: Location
             ) { }
 
   getUsers(): Promise<User[]> {
@@ -65,18 +64,21 @@ export class UserService {
         .post(url,JSON.stringify(user),{headers:this.headers})
         .toPromise()
         .then(res=>{
-          console.log(this.cookieService.getCookie("sss"));
-          window.debug=res;
-          console.log(res.headers.get('ss'));
-          console.log(res.headers.get('Authorization'));
-          console.log(res.json().name);
-          return res.json().name;
+          // window.debug=res;
+          res.json();
+          Cookie.set('username',res.json().name);
+          Cookie.set('groupid',res.json().groupid);
+          Cookie.set('id',res.json().id);
+          console.log(res.headers.get('X-Authorization'));
+          return res.headers.get('X-Authorization');
         })
         .catch(this.handleError);
 
   }
 
   test():Promise<string>{
+    Cookie.set('sss','aaa');
+
       return this.http
         .get('http://localhost:4567/user/login',new Headers({'Content-Type': 'application/json'}))
         .toPromise()
@@ -85,6 +87,7 @@ export class UserService {
           return res.json();
         })
         .catch(this.handleError);
+
   }
 
   private handleError(error: any): Promise<any> {
