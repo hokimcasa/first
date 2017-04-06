@@ -13,9 +13,15 @@
     </tr>
     <tr>
       <th scope="row">交易時間</th>
-      <td>{{transaction.transactionDate.substring(0,10)}} {{transaction.transactionDate.substring(11,19)}}</td> 
+      <td>
+        {{transaction.transactionDate.getFullYear()}}-{{transaction.transactionDate.getMonth()+1}}-{{transaction.transactionDate.getDate()}} 
+        {{transaction.transactionDate.getHours()}}:{{transaction.transactionDate.getMinutes()}}:{{transaction.transactionDate.getSeconds()}}    
+      </td> 
       <th>入帳時間</th>
-      <td>{{transaction.postingDate.substring(0,10)}} {{transaction.postingDate.substring(11,19)}}</td> 
+      <td>
+        {{transaction.postingDate.getFullYear()}}-{{transaction.postingDate.getMonth()+1}}-{{transaction.postingDate.getDate()}} 
+        {{transaction.postingDate.getHours()}}:{{transaction.postingDate.getMinutes()}}:{{transaction.postingDate.getSeconds()}}    
+      </td> 
     </tr>
     <tr>
       <th>通路</th>

@@ -9,14 +9,14 @@ import { TransactionData } from './transactiondata';
 export class TransactionService {
  
   private headers = new Headers({'Content-Type': 'application/json'});
-  private transactionsUrl = 'api/transactions';  // URL to web api
-
+  private transactionsUrl_inner = 'api/transactions';  // URL to web api
+  private transactionsUrl = 'http://localhost:4567/transaction';
   constructor(private http: Http) { }
 
   getTransactions(): Promise<TransactionData[]> {
     return this.http.get(this.transactionsUrl)
                .toPromise()
-               .then(response => response.json().data as TransactionData[])
+               .then(response => response.json() as TransactionData[])
                .catch(this.handleError);
   }
 
@@ -25,7 +25,7 @@ export class TransactionService {
     const url = `${this.transactionsUrl}/${id}`;
     return this.http.get(url)
       .toPromise()
-      .then(response => response.json().data as TransactionData)
+      .then(response => response.json() as TransactionData)
       .catch(this.handleError);
   }
 

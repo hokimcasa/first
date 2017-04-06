@@ -22,14 +22,14 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let transactionData of transactionDatas;let i = index" (click)="gotoDetail(transactionData.id)">
+                <tr *ngFor="let transaction of transactionDatas;let i = index" (click)="gotoDetail(transaction.id)">
                 <td>
-                    {{transactionData.transactionDate.substring(0,10)}}
+                    {{transaction.transactionDate.getFullYear()}}-{{transaction.transactionDate.getMonth()+1}}-{{transaction.transactionDate.getDate()}}
                 </td>
-                <td>{{transactionData.memberId}}</td>
-                <td>{{transactionData.channelId}}</td>
-                <td>{{transactionData.money}}</td>
-                <td>{{transactionData.remark}}</td>
+                <td>{{transaction.memberId}}</td>
+                <td>{{transaction.channelId}}</td>
+                <td>{{transaction.money}}</td>
+                <td>{{transaction.remark}}</td>
                 </tr>
                 
             </tbody>

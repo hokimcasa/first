@@ -27,11 +27,15 @@ export class TransactionDetailComponent implements OnInit{
     getTransactionDatas():void{
         this.route.params
             .switchMap((params: Params) => this.transactionService.getTransaction(params['id']))
-            .subscribe(transaction => {this.transaction = transaction;
+            .subscribe(transaction => {
+                                    this.transaction = transaction;
+                                    this.transaction.transactionDate = new Date(this.transaction.transactionDate);
+                                    this.transaction.postingDate = new Date(this.transaction.postingDate);
+                                    
                                     this.memberService
-                                        .getMember(this.transaction.memberid)
+                                        .getMember(this.transaction.memberId)
                                         .then(member=>{
-                                            this.transaction.memberid=member.name;
+                                            this.transaction.memberId=member.name;
                                             this.channelService
                                             .getChannel(member.channelId)
                                             .then(channel=>this.channel=channel);

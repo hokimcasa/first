@@ -27,13 +27,14 @@ export class TransactionBadyComponent implements OnInit{
         this.transactionService.getTransactions().then(transactionDatas=>{
             this.transactionDatas=transactionDatas;
             for(let i = 0;i<transactionDatas.length;i++){
+                transactionDatas[i].transactionDate = new Date(transactionDatas[i].transactionDate);
                 this.memberService
-                    .getMember(transactionDatas[i].memberid)
+                    .getMember(transactionDatas[i].memberId)
                     .then(member=>{
-                        this.transactionDatas[i].memberid=member.name;
+                        this.transactionDatas[i].memberId=member.name;
                         this.channelService
                         .getChannel(member.channelId)
-                        .then(channel=>this.transactionDatas[i].channelid=channel.channelname);
+                        .then(channel=>this.transactionDatas[i].channelId=channel.channelName);
                     });
                 }
         });
