@@ -13,7 +13,7 @@
       <th scope="row">姓名</th>
       <td>{{member.name}}</td>
       <th>通路</th>
-      <td *ngIf="channel">{{channel.channelname}}</td>
+      <td *ngIf="channel">{{channel.channelName}}</td>
     </tr>
  
     <tr>
@@ -46,15 +46,21 @@
       <td colspan="2">
          <tr>
           <th class="font-sm">建立時間</th>
-          <td class="font-sm">{{member.createDate.substring(0,10)}} {{member.createDate.substring(11,19)}}</td>
+          <td class="font-sm">
+            {{member.createDate.getFullYear()}}-{{member.createDate.getMonth()+1}}-{{member.createDate.getDate()}} {{member.createDate.getHours()}}:{{member.createDate.getMinutes()}}:{{member.createDate.getSeconds()}}      
+          </td>
           <th class="font-sm" scope="row">建立者</th>
-          <td class="font-sm">{{member.createUser}}</td>      
+          <td *ngIf="user" class="font-sm">{{user.name}}</td>      
         </tr>
         <tr>
           <th scope="row" class="font-sm">最後修改時間</th>
-          <td class="font-sm">{{member.lastUpdate}}</td>
+          <td class="font-sm" >
+            <div *ngIf="member.lastUpdate" >
+            {{member.lastUpdate.getFullYear()}}-{{member.lastUpdate.getMonth()+1}}-{{member.lastUpdate.getDate()}} {{member.lastUpdate.getHours()}}:{{member.lastUpdate.getMinutes()}}:{{member.lastUpdate.getSeconds()}}      
+            </div>
+          </td>
           <th class="font-sm">修改者</th>
-          <td class="font-sm">{{member.updateUser}}</td>
+          <td *ngIf="updateUser" class="font-sm">{{updateUser.name}}</td>
         </tr>
       </td>
     </tr>

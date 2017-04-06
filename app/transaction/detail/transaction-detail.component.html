@@ -9,7 +9,7 @@
       <th scope="row">ID</th>
       <td >{{transaction.id}}</td>
       <th>會員</th>
-      <td>{{transaction.memberid}}</td>
+      <td>{{transaction.memberId}}</td>
     </tr>
     <tr>
       <th scope="row">交易時間</th>
@@ -19,7 +19,7 @@
     </tr>
     <tr>
       <th>通路</th>
-      <td *ngIf="channel">{{channel.channelname}}</td>
+      <td *ngIf="channel">{{channel.channelName}}</td>
       <th>手續費</th>
       <td *ngIf="channel">{{channel.fee}}%</td>
     </tr>

@@ -3,7 +3,7 @@ import { InMemoryDbService } from 'angular-in-memory-web-api';
 export class InMemoryDataService implements InMemoryDbService{
   createDb(){
     let members = [
-      {id:'A123456789',name:'張三蚵仔煎',channelId:'C00001',fee:'13',mobileNO:'0987654321',accountNo:'5424282625847430',email:'test1@sample.com',address:'""106臺北市大安區新生南路2段86號""',
+      {id:'A123456789',name:'張三蚵仔煎',channelId:'C00001',fee:'13',mobileNO:'0987654321',accountNo:'5424282625847430',email:'test1@sample.com',address:'106臺北市大安區新生南路2段86號',
        webSite:'http://sample1.com.tw',createDate:new Date('2010-10-29T12:00:00Z'),createUser:'',lastUpdate:'',updateUser:''},
       {id:'B234567898',name:'李四高麗菜',channelId:'C00003',fee:'',mobileNO:'0912345678',accountNo:'5447687481611782',email:'test2@sample.com',address:'台北市松山區八德路四段692號7-11樓',
        webSite:'http://sample2.com.tw',createDate:new Date('2010-10-29T11:00:00Z'),createUser:'',lastUpdate:'',updateUser:''},

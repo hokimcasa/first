@@ -26,7 +26,7 @@
                   <td>{{member.id}}</td>
                   <td>{{member.name}}</td>
                   <td>
-                      {{member.createDate.substring(0,10)}}
+                      {{member.createDate.getFullYear()}}-{{member.createDate.getMonth()+1}}-{{member.createDate.getDate()}}
                   </td>
                   <td>
                       {{member.channelId}}

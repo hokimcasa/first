@@ -9,12 +9,12 @@ import { Channel } from './channel';
 export class ChannelService {
 
   private headers = new Headers({'Content-Type': 'application/json'});
-  private channelsURL = 'api/channels';  // URL to web api
-
+  private channelsURL_inner  = 'api/channels';  // URL to web api
+  private channelsURL  = 'http://localhost:4567/channel';
   constructor(private http: Http) { }
 
   getChanneles(): Promise<Channel[]> {
-    return this.http.get('http://localhost:4567/channel')
+    return this.http.get(`${this.channelsURL}`)
                .toPromise()
                .then(response => response.json() as Channel[])
                .catch(this.handleError);
@@ -27,7 +27,7 @@ export class ChannelService {
     console.log("id = "+id);
     return this.http.get(url)
       .toPromise()
-      .then(response => response.json().data as Channel)
+      .then(response => response.json() as Channel)
       .catch(this.handleError);
   }
 

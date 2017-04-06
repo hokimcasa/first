@@ -4,8 +4,8 @@ export class TransactionData {
   id:string;
   transactionDate:Date;  
   money: number;
-  memberid:string;
-  channelid:string;
+  memberId:string;
+  channelId:string;
   remark:string;
   buyerName:string;
   buyerAccountNo:string;

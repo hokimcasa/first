@@ -50,25 +50,30 @@ export class MemberComponent implements OnInit{
         console.log("getAll "+members);
         this.memberssub = members.slice(0,10);
         this.temp = new Array(Math.ceil(members.length/10)).fill(0);
+         for(let i=0;i<this.memberssub.length;i++){
+              this.memberssub[i].createDate = new Date(this.memberssub[i].createDate);
+         }
         this.channelService.getChanneles().then(channels=>{
           this.channels = channels;
             for(let i=0;i<this.memberssub.length;i++){
             for(let j=0;j<channels.length;j++){
                 console.log();
                 if(this.memberssub[i].channelId===channels[j].id){
-                    this.memberssub[i].channelId=channels[j].channelname;
+                    this.memberssub[i].channelId=channels[j].channelName;
                 }
             }
           }
         });
       });
-      
     }
 
     getMembers(index:number):void{
       this.memberService.getMembers().then(members=>{
         this.memberssub = members.slice(0+index*10,10+index*10);
         this.temp = new Array(Math.ceil(members.length/10)).fill(0);
+        for(let i=0;i<this.memberssub.length;i++){
+              this.memberssub[i].createDate = new Date(this.memberssub[i].createDate);
+         }
       });
       this.channelService.getChanneles().then(channels=>{
         this.channels = channels;
@@ -77,7 +82,7 @@ export class MemberComponent implements OnInit{
               // console.log();
               if(this.memberssub[i].channelId===this.channels[j].id){
                   
-                  this.memberssub[i].channelId=this.channels[j].channelname;
+                  this.memberssub[i].channelId=this.channels[j].channelName;
               }
           }
         }

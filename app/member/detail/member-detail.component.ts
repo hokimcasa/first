@@ -6,6 +6,8 @@ import { MemberService}           from '../member.service';
 import { Location}                from '@angular/common';
 import { Channel }                 from '../../channel/channel';
 import { ChannelService}           from '../../channel/channel.service';
+import { User }                 from '../../user/user';
+import { UserService}           from '../../user/user.service';
 @Component({
   moduleId: module.id,
   selector: 'memberdetail',
@@ -18,11 +20,14 @@ import { ChannelService}           from '../../channel/channel.service';
 export class MemberDetailComponent implements OnInit{
   member:Member;
   channel:Channel;
+  user:User;
+  updateUser:User;
   constructor(
     private memberService: MemberService,
+    private channelService: ChannelService,
+    private userService: UserService,
     private route: ActivatedRoute,
     private location: Location,
-    private channelService: ChannelService,
     private router: Router
   ) {}
 
@@ -30,10 +35,23 @@ export class MemberDetailComponent implements OnInit{
     this.route.params
       .switchMap((params: Params) => this.memberService.getMember(params['id']))
       .subscribe(member => {this.member = member;
-                            console.log(member.mobileNO);
+                            this.member.createDate = new Date(this.member.createDate);
+                            console.log(this.member.lastUpdate);
+                            if(this.member.lastUpdate!==null){
+                              console.log("%%%");
+                                this.member.lastUpdate = new Date(this.member.lastUpdate);
+                            }
                             this.channelService.getChannel(this.member.channelId)
                             .then(channel=>{
                             this.channel = channel;
+                            });
+                            this.userService.getUser(this.member.createUser)
+                            .then(user=>{
+                            this.user = user;
+                            });
+                            this.userService.getUser(this.member.updateUser)
+                            .then(updateUser=>{
+                            this.updateUser = updateUser;
                             });
                           });
   }

@@ -10,8 +10,7 @@ import { User }    from './user';
 export class UserService {
 
   private headers = new Headers({'Content-Type': 'application/json','withCredentials':true});
-  private UserUrl = 'http://localhost:4567/user/login';  // URL to web api
-
+  private UserUrl = 'http://localhost:4567/user';  // URL to web api
   constructor(private http: Http,
               private location: Location
             ) { }
@@ -19,7 +18,7 @@ export class UserService {
   getUsers(): Promise<User[]> {
     return this.http.get(this.location.normalize(this.UserUrl))
                .toPromise()
-               .then(response => response.json().data as User[])
+               .then(response => response.json() as User[])
                .catch(this.handleError);
   }
 
@@ -28,7 +27,7 @@ export class UserService {
     const url = `${this.UserUrl}/${id}`;
     return this.http.get(url)
       .toPromise()
-      .then(response => response.json().data as User)
+      .then(response => response.json() as User)
       .catch(this.handleError);
   }
 
@@ -58,7 +57,7 @@ export class UserService {
   }
 
   login(user:User):Promise<string>{
-      const url = `http://localhost:4567/user/login`;
+      const url = `${this.UserUrl}/login`;
       console.log(url);
       return this.http
         .post(url,JSON.stringify(user),{headers:this.headers})
@@ -67,7 +66,7 @@ export class UserService {
           // window.debug=res;
           res.json();
           Cookie.set('username',res.json().name);
-          Cookie.set('groupid',res.json().groupid);
+          Cookie.set('groupId',res.json().groupId);
           Cookie.set('id',res.json().id);
           console.log(res.headers.get('X-Authorization'));
           return res.headers.get('X-Authorization');
