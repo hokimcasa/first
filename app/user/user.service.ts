@@ -72,7 +72,21 @@ export class UserService {
           return res.headers.get('X-Authorization');
         })
         .catch(this.handleError);
+  }
 
+  logout(user:User):Promise<string>{
+      const url = `${this.UserUrl}/logout`;
+      console.log(url);
+      return this.http
+        .post(url,JSON.stringify({id:user.id,name:user.name,password:"",groupId:user.groupId}),{headers:this.headers})
+        .toPromise()
+        .then(res=>{
+          // window.debug=res;
+          
+          console.log(res.headers.get('X-Authorization'));
+          return res.headers.get('X-Authorization');
+        })
+        .catch(this.handleError);
   }
 
   test():Promise<string>{
