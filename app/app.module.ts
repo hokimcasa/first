@@ -14,8 +14,6 @@ import { MemberComponent }   from './member/member.component';
 import { MemberInsertComponent }   from './member/insert/member-insert.component';
 import { MemberDetailComponent }   from './member/detail/member-detail.component';
 import { TransactionComponent }   from './transaction/transaction.component';
-import { TransactionHeadComponent }   from './transaction/head/transaction-head.component';
-import { TransactionBadyComponent }   from './transaction/bady/transaction-bady.component';
 import { GoogleChartComponent}         from './chart/googlechart/googlechart.component';
 import { MemberService}           from './member/member.service';
 import { ChannelService}           from './channel/channel.service';
@@ -49,8 +47,6 @@ import {InMemoryDataService} from './inMemoryData/InMemoryDataService'
     MemberComponent,
     MemberInsertComponent,
     TransactionComponent,
-    TransactionHeadComponent,
-    TransactionBadyComponent,
     GoogleChartComponent,
     MemberDetailComponent,
     MemberUpdateComponent,

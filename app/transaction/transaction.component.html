@@ -1,2 +1,74 @@
-<transaction-head></transaction-head>
-<transaction-bady></transaction-bady>
+<form class="form-inline">
+
+    <div class="form-group row col-4">
+        <label for="InputName" class="mr-sm-1">會員姓名:</label>
+        <input [(ngModel)]="transactionSearch.memberName" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="InputName"  >
+    </div>
+    
+    
+    <div class="form-group row col-3">
+        <label for="SelectLevel" class="mr-sm-2">通路:</label>
+            <select class="form-control mb-1 mr-sm-1 mb-sm-0" id="SelectLevel"  (change)="onChange($event.target.value)">
+                <option value="C00001">通化街夜市</option>
+                <option value="C00002">奇怪網路商城</option>
+                <option value="C00003">某山頭小農</option>
+                <option value="C00004">奇幻網路遊戲</option>
+            </select>
+    </div>
+
+    <div class="form-group row col-5" >
+        <label for="date-input-start-thc" class="mr-sm-1">交易日期:</label>
+    
+        <input [(ngModel)]="transactionSearch.startDate" [ngModelOptions]="{standalone: true}" class="form-control input-w" value="2017-04-07" type="date" id="date-input-start-thc">
+    
+        <label for="date-input-end-thc" class="col-form-label">~</label>
+    
+        <input [(ngModel)]="transactionSearch.endDate" [ngModelOptions]="{standalone: true}" class="form-control" type="date" id="date-input-end-thc">
+    </div>
+  <button type="submit" class="btn btn-primary" (click)="onClick()">搜尋</button>
+</form>
+<div class="card">
+    <div class="card-header">
+        <i class="fa fa-align-justify"></i> 查詢結果
+        <div aria-label="Toolbar with button groups" class="btn-toolbar pull-right" role="toolbar">
+            
+            <div aria-label="Second group" class="btn-group" role="group">
+               
+                <button class="btn btn-primary btn-sm" type="button">友善列印</button>
+            </div>
+        </div>
+    </div>            
+
+    <div class="card-block">
+        <table class="table table-bordered table-striped table-condensed">
+            <thead>
+                <tr>
+                    <th>日期</th>
+                    <th>姓名</th>
+                    <th>等級</th>
+                    <th>金額</th>
+                    <th>備註</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let transaction of transactionDatas;let i = index" (click)="gotoDetail(transaction.id)">
+                <td>
+                    {{transaction.transactionDate.getFullYear()}}-{{transaction.transactionDate.getMonth()+1}}-{{transaction.transactionDate.getDate()}}
+                </td>
+                <td>{{transaction.memberId}}</td>
+                <td>{{transaction.channelId}}</td>
+                <td>{{transaction.money}}</td>
+                <td>{{transaction.remark}}</td>
+                </tr>
+                
+            </tbody>
+        </table>
+        <nav>
+            <ul class="pagination">
+                <li class="page-item"><a class="page-link" routerLink="/transaction" routerLinkActive="active">Prev</a></li>
+                <li class="page-item"><a class="page-link" routerLink="/transaction" routerLinkActive="active">1</a></li>
+                <li class="page-item"><a class="page-link" routerLink="/transaction" routerLinkActive="active">Next</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>    
