@@ -8,7 +8,7 @@
     <tr>
       <th scope="row">ID</th>
       <td >{{channel.id}}</td>
-      <th scope="row" >種類</th>
+      <th scope="row">種類</th>
       <td><input [(ngModel)]="channel.description" [ngModelOptions]="{standalone: true}" type="text" class="form-control" value="{{channel.description}}"></td>
     </tr>
     <tr>
@@ -24,9 +24,11 @@
       <td colspan="2">
          <tr>
           <th class="font-sm"  scope="row">建立時間</th>
-          <td class="font-sm">{{channel.createDate.substring(0,10)}} {{channel.createDate.substring(11,19)}}</td>
+          <td class="font-sm">
+            {{channel.createDate.getFullYear()}}-{{channel.createDate.getMonth()+1}}-{{channel.createDate.getDate()}} {{channel.createDate.getHours()}}:{{channel.createDate.getMinutes()}}:{{channel.createDate.getSeconds()}}
+          </td>
           <th class="font-sm">建立者</th>
-          <td class="font-sm">{{channel.createUser}}</td>      
+          <td *ngIf="user" class="font-sm">{{user.name}}</td> 
         </tr>
       </td>
     </tr>

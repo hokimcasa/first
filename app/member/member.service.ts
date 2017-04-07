@@ -65,6 +65,17 @@ export class MemberService {
       .catch(this.handleError);
   }
 
+  updateChannelId(member: Member): Promise<Member> {
+    const url = `${this.MemberesUrl}/${member.id}`;
+    return this.http
+      .put(url, JSON.stringify({id: member.id,name: member.name,fee:member.fee, mobileNO:member.mobileNO,
+                                accountNo:member.accountNo,email:member.email,address:member.address,
+                                webSite:member.webSite,updateUser:Cookie.get("id"),channelId:member.channelId}), {headers: this.headers})
+      .toPromise()
+      .then(res => res.json() as Member)
+      .catch(this.handleError);
+  }
+
   private handleError(error: any): Promise<any> {
     console.error('An error occurred', error); // for demo purposes only
     return Promise.reject(error.message || error);

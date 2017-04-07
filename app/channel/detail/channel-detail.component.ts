@@ -6,6 +6,8 @@ import { MemberService}           from '../../member/member.service';
 import { Location}                from '@angular/common';
 import { Channel }                 from '../channel';
 import { ChannelService}           from '../channel.service';
+import { User }                 from '../../user/user';
+import { UserService}           from '../../user/user.service';
 @Component({
   moduleId: module.id,
   selector: 'channeldetail',
@@ -17,10 +19,12 @@ import { ChannelService}           from '../channel.service';
 
 export class ChannelDetailComponent implements OnInit{
   channel:Channel;
+  user:User;
   constructor(
     private route: ActivatedRoute,
     private location: Location,
     private channelService: ChannelService,
+    private userService: UserService,
     private router: Router
   ) {}
 
@@ -29,6 +33,11 @@ export class ChannelDetailComponent implements OnInit{
       .switchMap((params: Params) => this.channelService.getChannel(params['id']))
       .subscribe(channel => {
         this.channel = channel;
+        this.channel.createDate = new Date(this.channel.createDate);
+        this.userService.getUser(this.channel.createUser)
+                            .then(user=>{
+                            this.user = user;
+                            });
     });
   }
 

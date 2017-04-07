@@ -23,8 +23,8 @@ export class ChannelService {
 
   getChannel(id: string): Promise<Channel> {
     const url = `${this.channelsURL}/${id}`;
-    console.log("url = "+url);
-    console.log("id = "+id);
+    // console.log("url = "+url);
+    // console.log("id = "+id);
     return this.http.get(url)
       .toPromise()
       .then(response => response.json() as Channel)

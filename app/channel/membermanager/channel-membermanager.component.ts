@@ -20,6 +20,9 @@ export class ChannelMemberManagerComponent implements OnInit{
   tempDate:Date;
   members:Member[]=[];
   selectid:string;
+  insertid:string;
+  channelid:string;
+  insertMember:Member;
   constructor(
     private location:Location,
     private route: ActivatedRoute,
@@ -31,21 +34,21 @@ export class ChannelMemberManagerComponent implements OnInit{
         this.route.params
         .subscribe((params: Params)=>{
             this.getChannelMember(params['id']);
+            this.channelid=params['id'];
         });
         
     }
 
     getChannelMember(channel:string):void{
-        
       this.memberService.getMembers().then(
-          members=>{
+        members=>{
               for(let i=0;i<members.length;i++){
                   if(members[i].channelId==channel){
                       this.members.push(members[i]);
                       console.log("applymembers["+i+"]" );
                   }
               }
-            });
+          });
     }
 
     goBack():void{
@@ -59,9 +62,19 @@ export class ChannelMemberManagerComponent implements OnInit{
 
     delete(member:Member): void {
       member.channelId='';
-      this.memberService.update(member)
+      this.memberService.updateChannelId(member)
       .then(() => this.goBack());
     }
 
-    
+    insertChannelMember():void{
+      this.memberService.getMember(this.insertid).then(
+        member=>{
+              this.insertMember=member;
+              this.insertMember.channelId=this.channelid;
+              console.log(this.insertMember);
+              this.memberService.updateChannelId(this.insertMember)
+              .then(() => this.goBack());
+          });
+      
+    }
   }

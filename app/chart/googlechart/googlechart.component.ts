@@ -17,6 +17,8 @@ export class GoogleChartComponent extends ChartComponent implements OnInit {
   drawGraph(){
     console.log("DrawGraph Evolution...");  
     // 所要顯示的資料
+
+    
     this.data = this.createDataTable([
       ['Evolution', '會員人數'],
       ['通化街夜市', 4],

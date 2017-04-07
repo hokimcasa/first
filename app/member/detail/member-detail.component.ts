@@ -38,7 +38,6 @@ export class MemberDetailComponent implements OnInit{
                             this.member.createDate = new Date(this.member.createDate);
                             console.log(this.member.lastUpdate);
                             if(this.member.lastUpdate!==null){
-                              console.log("%%%");
                                 this.member.lastUpdate = new Date(this.member.lastUpdate);
                             }
                             this.channelService.getChannel(this.member.channelId)
