@@ -50,7 +50,8 @@ export class ChannelService {
   update(Channel: Channel): Promise<Channel> {
     const url = `${this.channelsURL}/${Channel.id}`;
     return this.http
-      .put(url, JSON.stringify(Channel), {headers: this.headers})
+      .put(url, JSON.stringify({id:Channel.id,channelName:Channel.channelName,fee:Channel.fee,
+        description:Channel.description}), {headers: this.headers})
       .toPromise()
       .then(() => Channel)
       .catch(this.handleError);

@@ -35,7 +35,10 @@ export class MemberUpdateComponent implements OnInit{
       .subscribe(member => {
         this.member = member;
         this.member.createDate = new Date(this.member.createDate);
-        this.member.lastUpdate = new Date(this.member.lastUpdate);
+        if(this.member.lastUpdate!==null){
+            this.member.lastUpdate = new Date(this.member.lastUpdate);
+        }
+        
         this.channelService.getChannel(member.channelId).then(channel=>{
                             this.channel = channel;
                             });

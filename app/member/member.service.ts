@@ -59,7 +59,7 @@ export class MemberService {
     return this.http
       .put(url, JSON.stringify({id: member.id,name: member.name,fee:member.fee, mobileNO:member.mobileNO,
                                 accountNo:member.accountNo,email:member.email,address:member.address,
-                                webSite:member.webSite,updateUser:Cookie.get("id")}), {headers: this.headers})
+                                webSite:member.webSite,updateUser:Cookie.get("id"),channelId:member.channelId}), {headers: this.headers})
       .toPromise()
       .then(res => res.json() as Member)
       .catch(this.handleError);

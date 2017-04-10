@@ -20,7 +20,7 @@
  
     <tr>
       <th scope="row" >手續費</th>
-      <td><input [(ngModel)]="member.fee" [ngModelOptions]="{standalone: true}" type="text" class="form-control input-s" value="{{member.fee}}"><span>%</span></td>
+      <td><input [(ngModel)]="member.fee" [ngModelOptions]="{standalone: true}" type="text" class="form-control" value="{{member.fee}}"></td>
       <th>手機</th>
       <td><input [(ngModel)]="member.mobileNO" [ngModelOptions]="{standalone: true}" type="tel" class="form-control" id="phonenumber1" value="{{member.mobileNO}}"></td>
     </tr>
@@ -55,7 +55,7 @@
         </tr>
         <tr>
           <th scope="row" class="font-sm">最後修改時間</th>
-          <td class="font-sm">{{member.lastUpdate.getFullYear()}}-{{member.lastUpdate.getMonth()+1}}-{{member.lastUpdate.getDate()}} {{member.lastUpdate.getHours()}}:{{member.lastUpdate.getMinutes()}}:{{member.lastUpdate.getSeconds()}}      
+          <td class="font-sm"><div *ngIf="member.lastUpdate">{{member.lastUpdate.getFullYear()}}-{{member.lastUpdate.getMonth()+1}}-{{member.lastUpdate.getDate()}} {{member.lastUpdate.getHours()}}:{{member.lastUpdate.getMinutes()}}:{{member.lastUpdate.getSeconds()}}</div>   
          </td>
           <th class="font-sm">修改者</th>
           <td *ngIf="updateUser" class="font-sm">{{updateUser.name}}</td>
